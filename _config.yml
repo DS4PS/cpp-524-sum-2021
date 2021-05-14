@@ -17,14 +17,14 @@ brand:
 
 # Site subpath, e.g. /blog
 url :               "https://ds4ps.github.io"
-baseurl:            "/cpp-524-spr-2021"
-course_url:         "http://ds4ps.org/cpp-524-spr-2021/"
+baseurl:            "/cpp-524-sum-2021"
+course_url:         "http://ds4ps.org/cpp-524-sum-2021/"
 
 github_info:
     username:          DS4PS # Github location of the course
     branch:            master
-    website-repo:      cpp-524-spr-2021
-    course-repo:       cpp-524-spr-2021
+    website-repo:      cpp-524-sum-2021
+    course-repo:       cpp-524-sum-2021
     
 
 # header color set at assets/css/custom.css under default_nav and footer background-color
@@ -35,7 +35,7 @@ header:
 - title: Course Schedule
   url: schedule/
 - title: Yellowdig
-  url: https://canvas.asu.edu/courses/76017/assignments/1888980
+  url: https://canvas.asu.edu/courses/86712/assignments/2210979
 - title: Resources 
   url: resources/
 - title: Review Sessions 
