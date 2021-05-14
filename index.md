@@ -17,7 +17,7 @@ info:
  course_start_end_dates: May 17 - June 25, 2021  
  course_prerequisites: CPP 523 or similar regression course
  class_meets_when:  Asynchronous  
- class_meets_where:  'https://asu.zoom.us/j/84210278039'
+ class_meets_where:  'https://asu.zoom.us/j/'
  review_sessions_when: TBD 
  review_sessions_where: Zoom
  discussion_board_url: '/help/'
