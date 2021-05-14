@@ -19,8 +19,8 @@ info:
  class_meets_when:  Asynchronous  
  class_meets_where:  'https://asu.zoom.us/j/6829300585'
  review_sessions_when: TBD 
- review_sessions_where: Zoom
- discussion_board_url: '/help/'
+ review_sessions_where: 'https://asu.zoom.us/j/6829300585'
+ discussion_board_url: 'https://ds4ps.org/cpp-524-sum-2021/help/'
 
 instructor:
 -  name: David Selby
