@@ -368,7 +368,7 @@ We rarely have the resources or opportunity to utilize Randomized Control Trials
 
 **Due {{page.labs.lab-02}}**
 
-### Part I: Test for Group Equivalence
+**PART I: TESTS FOR GROUP EQUIVALENCE**
 
 
 <a class="uk-button uk-button-default" href="../labs/lab-02-equivalence-tests.html">Lab-02 Instructions</a>
@@ -380,9 +380,9 @@ When you are complete:
 <br>
 <br>
 
-### Part II: News Article Discussion
+**PART II: IN THE NEWS**
 
-**Apples to Apples**
+Apples to Apples:
 
 Counterfactuals are simultaneously very intuitive and very challenging. 
 
@@ -394,7 +394,7 @@ Most people are familiar with the concept, if not the term. How often do you hea
 
 On the other hand, it can be hard to tell whether a comparison is **REALLY** apples to apples. 
 
-## Hidden Counterfactuals
+**Hidden Counterfactuals**
 
 This assignment is designed to help you be a more astute reader of research, or evidence-adjacent claims. For the sake of this class we will think of evidence primary in terms of claims of causality after some intervention occurred. 
 
@@ -445,9 +445,9 @@ What has to be true for a control variable to make an effect disappear?
 
 **Due {{page.project.step-02}}**
 
+----------
 
-
-### Measure Your Outcome
+**Measure Your Outcome**
 
 You need to identify one to three metrics that will be used to measure the outcome in your study. 
 
@@ -459,7 +459,7 @@ You will report the instrument(s) and their reliability measures.
 
 -----
 
-### What is an "instrument" in social science? 
+**What is an "instrument" in social science?**
 
 > Many variables studied by psychologists are straightforward and simple to measure. These include sex, age, height, weight, and birth order. You can often tell whether someone is male or female just by looking. You can ask people how old they are and be reasonably sure that they know and will tell you. Although people might not know or want to tell you how much they weigh, you can have them step onto a bathroom scale. Other variables studied by psychologists—perhaps the majority—are not so straightforward or simple to measure. We cannot accurately assess people’s level of intelligence by looking at them, and we certainly cannot put their self-esteem on a bathroom scale. **These kinds of variables are called LATENT CONSTRUCTS** (pronounced CON-structs) and include personality traits (e.g., extraversion), emotional states (e.g., fear), attitudes (e.g., toward taxes), and abilities (e.g., athleticism). 
 
@@ -480,7 +480,7 @@ If your desire more backgroud, the following textbook chapter provides a nice su
 *Kimberlin, C. L., & Winterstein, A. G. (2008). Validity and reliability of measurement instruments used in research. American journal of health-system pharmacy, 65(23), 2276-2284.* [ [pdf](https://github.com/DS4PS/cpp-529-master/raw/master/articles/measurement/reliabillity-and-validity-of-measures.pdf) ]
 
 
-### INSTRUCTIONS:
+**INSTRUCTIONS:**
 
 This project step has two parts:
 
@@ -684,7 +684,7 @@ When you are complete:
 **Due {{page.project.step-03}}**
 
 
-### Step 03 - Theory of Change
+**Step 03 - Theory of Change**
 
 Each program has a theory of change that is used to articulate the intended program steps and the relationships between program activities and client outcomes. 
 
@@ -790,7 +790,7 @@ When you are complete:
 
 **Due {{page.project.step-04}}**
 
-### Step 04 - Diagram Your Counterfactual
+**Step 04 - Diagram Your Counterfactual**
 
 Review the following example that walks through the steps of diagramming a counterfactual as part of a research design exercise. 
 
