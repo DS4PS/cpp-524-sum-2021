@@ -113,7 +113,7 @@ Reichardt, C. S., & Bormann, C. A. (1994). Using regression models to estimate p
 
 
 
-*** { @unit = "TUES Jan 19th", @title = "LAB 01", @assignment, @foldout   }
+*** { @unit = "FRI May 21st", @title = "LAB 01", @assignment, @foldout   }
 
 
 ## Lab 01 - Counterfactual Reasoning with RCTs
@@ -147,7 +147,7 @@ And submit via Canvas.
 <br>
 
 
-*** { @unit = "FRI Jan 22nd", @title = "Final Project Step-01", @assignment, @foldout }
+*** { @unit = "Mon May 24th", @title = "Final Project Step-01", @assignment, @foldout }
 
 <br>
 <br>
@@ -251,7 +251,7 @@ We rarely have the resources or opportunity to utilize Randomized Control Trials
 
 
 
-*** { @unit = "TUES Jan 26th", @title = "LAB 02", @assignment, @foldout }
+*** { @unit = "FRI May 28th", @title = "LAB 02", @assignment, @foldout }
 
 
 <br>
@@ -330,7 +330,7 @@ What has to be true for a control variable to make an effect disappear?
 
 
 
-*** { @unit = "FRI Jan 29th", @title = "Final Project Step-02", @assignment, @foldout }
+*** { @unit = "TUE June 1st", @title = "Final Project Step-02", @assignment, @foldout }
 
 <br>
 <br>
@@ -542,7 +542,7 @@ After mastering Campbell Scores you will be able to:
 <br>
 
 
-*** { @unit = "TUES Feb 2nd", @title = "LAB 03", @assignment, @foldout  }
+*** { @unit = "FRI June 4th", @title = "LAB 03", @assignment, @foldout  }
 
 <br>
 
@@ -574,7 +574,7 @@ When you are complete:
 
 
 
-*** { @unit = "FRI Feb 5th", @title = "Final Project Step-03", @assignment, @foldout }
+*** { @unit = "MON June 7th", @title = "Final Project Step-03", @assignment, @foldout }
 
 <br>
 <br>
@@ -652,7 +652,7 @@ Case studies will again be from *Bingham, R., & Felbinger, C. (2002). Evaluation
 
 
 
-*** { @unit = "TUES Feb 9th", @title = "LAB 04", @assignment, @foldout  }
+*** { @unit = "FRI June 11th", @title = "LAB 04", @assignment, @foldout  }
 
 <br>
 <br>
@@ -688,7 +688,7 @@ When you are complete:
 
 
 
-*** { @unit = "FRI Feb 12th", @title = "Final Project Step-04", @assignment, @foldout }
+*** { @unit = "MON June 14th", @title = "Final Project Step-04", @assignment, @foldout }
 
 <br>
 <br>
@@ -753,7 +753,7 @@ At this point you should have feedback on your research design memo and practice
 <br>
 
 
-*** { @unit = "TUES Feb 16th", @title = "LAB 05", @assignment, @foldout }
+*** { @unit = "FRI June 18th", @title = "LAB 05", @assignment, @foldout }
 
 <br>
 <br>
@@ -796,12 +796,12 @@ You will see that the pay gap will change when you change the estimator. The goa
 ######################################################
 -->
 
-** Week 6 - Research Design Memo  
+** Week 6 - Wrap-up
 
 
 
 
-*** { @unit = "TUE Feb 23rd", @title = "Research Design Memo", @assignment, @foldout }
+*** { @unit = "FRI June 25th", @title = "Research Design Memo", @assignment, @foldout }
 
 <br>
 <br>
@@ -842,7 +842,7 @@ By the time you are done writing up details you will likely have 10 to 20 pages 
 ####      Week 7 - Research Design Projects 
 ####
 ######################################################
--->
+
 
 ** Week 7 - Final Exam 
 
@@ -851,16 +851,16 @@ By the time you are done writing up details you will likely have 10 to 20 pages 
 *** { @unit = "", @title = "Overview", @foldout }
 
 <br>
-
+-->
 ## Final Exam
 
 * [Study Guide](https://github.com/DS4PS/cpp-524-spr-2021/raw/main/final-exam/cpp-524-final-exam-study-guide.pdf)  
 * [Practice Questions](https://github.com/DS4PS/cpp-524-spr-2021/raw/main/final-exam/final-exam-practice-questions.pdf)  
 
 
-*** { @unit = "FEB 27 - MARCH 2", @title = "Final Exam Open", @assignment, @foldout }
+*** { @unit = "JUNE 21 - JUNE 25", @title = "Final Exam Open", @assignment, @foldout }
 
-The final exam will be open from Saturday Feb 27th to Tuesday March 2nd. 
+The final exam will be open from Monday June 21st to Friday June 25th. 
 
 You will have 2 hours to complete the exam once you start, but you cannot start, pause, and come back to it. 
 
