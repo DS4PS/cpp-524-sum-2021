@@ -268,41 +268,88 @@ We would be naive to assume that if there is in fact no difference in taste that
 
 Read the following description of the problem set-up: [The Lady Tasting Tea](https://en.wikipedia.org/wiki/Lady_tasting_tea)
 
-Consider a slightly easier problem. A friend tells you that he is psychic and can use his mind to see what is behind walls. You just so happen to be watching Let's Make a Deal, and they are playing the game with 3 doors that hide 2 goats and 1 car. The contestant picks a door and wins the prize behind it. 
+
+<br>
+<br>
+
+
+
+## Your Level of Confidence
+
+A friend tells you that he is psychic and can use his mind to see what is behind walls. You just so happen to be watching Let's Make a Deal, and they are playing the game with 3 doors that hide 2 goats and 1 car.  
 
 ![](https://raw.githubusercontent.com/DS4PS/cpp-524-spr-2020/master/assets/img/goat-car-goat.png)
 
-If your friend correctly guesses the position of the car in the first round, what is the likelihood of that happening by chance? He has a one in three chance of guessing by luck on the first try. 
+Your friend correctly guesses the position of the car in the first round. What is the likelihood of that happening by chance? 
+
+Since there are three doors he has a one in three chance of guessing correct by luck on the first try. 
 
 ```
 Pr( selected door = car ) = 0.33
 ```
 
-So there is a 33% chance he is delusional but able to fool people.
-
-What about guessing two cars in a row? 
+What about making two correct guesses in a row? 
 
 ```
 Pr( door = car : round 1 ) & Pr( door = car: round 2 ) = (0.33)(0.33) = 0.11
 ```
 
-Three cars in a row? 
+Three correct guesses in a row? 
 
 ```
 (0.33)(0.33)(0.33) = 0.037
 ```
 
-At what point will you be convinced that he is psychic (or at least a good cheater)? How rare does the event need to be to provide sufficient evidence? 
+What about guessing correctly 3 out of 4 times? 
 
-What do we expect the typical state of the world to be if he is not psychic? What happens if after five rounds he has guessed correctly four times and incorrectly one time? Is that enough evidence to prove his psychic abilities make him a better guesser than chance? What if it were forty times out of fifty? Does that change our response?  
+Since there is a 0.67 chance that he is wrong in any round and there are four different ways to arrive at an outcome of 3 correct and 1 wrong guess there probability is:
 
-What if there are only two doors and he guesses correctly three times in a row? 
+```
+(0.33)*(0.33)*(0.33)*(0.33) + 
+(0.33)*(0.33)*(0.67)*(0.33) + 
+(0.33)*(0.67)*(0.33)*(0.33) + 
+(0.67)*(0.33)*(0.33)*(0.33) =  0.096
+```
+
+Still not a very likely outcome - it would only happen about 10% of the time when making completely random guesses. 
+
+**At what point will you be convinced that he is psychic (or at least a good cheater)?** 
+
+How rare does the event need to be to provide sufficient evidence? That is what we call the **level of confidence** or the alpha=0.05 we use in typical statistical tests. We can adjust the decision criteria (alpha) based upon context and preferences when conducting hypothesis tests. 
+
+The important thing to note is that a clear understanding of the counterfactual - how we expect the world to look if the program has no impact (or in this example if the friend is just making random guesses and is not actually clairvoyant) - will help use understand the nature of the hypothesis test and what we mean by a level of confidence in the study.
+
+What do we expect the typical state of the world to be if he is not psychic? How rare would an event need to be for us to believe him?  
+
+More importantly, the null hypothesis - our expected state of the world in the absence of a true psychic power - is highly contextual. For example, what if there are only two doors and he guesses correctly three times in a row? 
 
 ```
 (0.5)(0.5)(0.5) = 0.125
 ```
 
-There is now a 13% chance of observing that outcome instead of a 4% chance in the case with three doors and three correct guesses. Does that change our view? 
+When there are 3 doors in the game he has a 4% chance of guessing correctly all three times without psychic powers. In a game with 2 doors the expected state of the world (the null) now changes to a 13% chance of being correct three times in a row without psychic powers.
+
+We would NOT operationalize our decision criteria as "he must guess correctly 3 times before we believe him" because context matters. 
+
+We would rather design an experiment and operationalize our decision criteria as, he must beat a person making uninformed or non-psychic guesses 95% of the time. 
+
+If there were 3 doors in the game the evidence of 3 correct guesses in a row would suggest our friend is telling the truth. 
+
+If there are only 2 doors in the game then 3 correct guesses in a row would not be sufficient to reach our desired criteria. In this case we would actually need to play at least 4 rounds to achieve sufficient power to reach a conclusion. However, after 3 rounds and 3 correct guesses the evidence is still in his favor, is it not? 
+
+**Pay attention to the null hypothesis in each study**. As yourself, what would the world look like in the absence of program effects? It rarely means that we observe no changes in the study group. 
+
+In statistical models the larger the program effect the smaller the p-value (see the lecture on specification from CPP 523 or think about shifting the confidence interval for b1 to the right). 
+
+The program effect is calculated as the observed group mean minus the null, so the smaller the null the larger the program effect. If we are not careful and we select an artificially small null we will over-power our study and find program effects where there are none. 
+
+Or conversely if we select a null that is too large we make it very unlikely to detect any program effect. 
+
+More often than not this type of error will occur when the analyst compares all program participants to the typical person or to non-participants. The proper apples to apples comparison is all program participants to identical non-participants. These counterfactual becomes the null hypothesis in this case - the group that we use to represent what the program participants would have looked like without the program. We must take great caution to ensure we are selecting a meaningful null, and conversely that when we interpret p-values in the regression models we are clear that the p-value represents the proper hypothesis test. 
+
+You will see how the three estimators: reflextive (T2-T1), post-test only (T2-C2), and pre-post with comparison ([T2-T1]-[C2-C1]) use different slices of data from a study to operationalize different counterfactuals or nulls in the study. 
+
+Selecting the wrong null, or incorrectly interpretting the null in a model, is one of the most common mistakes you will see in practice and one that you should try to avoid at all costs. You are encouraged to spend time paying attention to the counterfactual in each study, the null used to generate p-values in each regression model, and the relationship between the two. 
 
 ---
 
