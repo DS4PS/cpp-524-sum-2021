@@ -155,9 +155,11 @@ Statistical signifance tells us the likelihood that the model slope differs from
 
 ## Internal Validity as a Murder Mystery
 
-**Internal validity** is the term we use to measure whether our research design sufficient to say with confidence that changes we observe in the data are a result of the program only. In other words, having strong internal validity requires that we must eliminate all of the other salient competing hypotheses that offer an alternative explanation to the observed changes in the data. 
+**Internal validity** is the term we use to measure whether our research design sufficient to say with confidence that changes we observe in the data are a **result of the program** and not some other explanation. In other words, having strong internal validity requires that we must eliminate all of the other salient competing hypotheses that offer an alternative explanation to the observed changes in the data. 
 
-We can treat this exercise as a murder mystery. Who created the changes in the data? Our leading theory is that the program did it, but we also must eliminate all of the other suspects. 
+We can treat this exercise as a murder mystery. What created the changes that we observe in the data? 
+
+Our leading theory is that the program did it, but we also must eliminate all of the other suspects before we are confident it was the program. 
 
 We will use a check-list approach that we call a **Campbell Score**, which is a list of the ten most common competing hypotheses that weaken internal validity. We will use the check-list to practice reading research critically to look for holes in design. You will also use the tool to create a research design for a program of your choice, and think through which competing explanations you need to neutralize if you want your results to be compelling.  
 
