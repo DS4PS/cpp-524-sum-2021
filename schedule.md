@@ -324,14 +324,14 @@ This week introduces the notion of counterfactual reasoning using quasi-experime
 
 * [**Testing the Counterfactual Validity**]({{page.pdf-root-url}}/lectures/p-02-tests-for-cf-validity.pdf)
 
-  - Pre-study equivalence 
-  - Tests for non-random attrition 
+  - Pre-study equivalence  
+  - Tests for non-random attrition  
 
+<br>
 
 * [**Varieties of the Counterfactual**]({{page.pdf-root-url}}/lectures/p-03-varieties-of-counterfactuals.pdf)
 
-  - Pre-post with comparison group design 
-    - difference-in-difference model  
+  - Pre-post with comparison group design  
   - Post-test only design 
   - Reflexive design 
 
