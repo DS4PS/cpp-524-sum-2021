@@ -97,7 +97,72 @@ We will spend a lot of time this semester looking at program effects, how we can
 <br>
 <br>
 
+## Statistical Power Calculator
 
+Statistical power is a way to determine your likelihood of a Type II Error (failure to detect a program impact when it exists) for a given sample size in a study. 
+
+--------
+
+We will not go in-depth into power analysis in this course, but you should be familiar with the term. Someone funding a study would want to know whether you have sufficient power (a large enough sample) to detect a reasonable program impact if it exists, so power analysis is typically done when applying for grants.
+
+--------
+
+[The NHST (Null Hypothesis Statistical Test) Ritual](https://rpsychologist.com/d3/NHST/)
+
+* alpha, the criteria used for rejecting the null (0.05) predicts the rate of Type I Errors in repeated samples 
+* beta ( 1 - power ) predicts the rate of Type II Errors in repeated samples 
+* effect size for a t-test (Cohen's d) tells you the distance between the observed population mean and the null 
+
+Note that increasing the sample size is unambiguously good in that it lowers Type I and Type II Errors, though there are always real economic costs of the sample in a study. 
+
+Similarly, a larger effect size is always better. If you have a very large effect it is easy to detect statistically even with a small sample. As a rule of thumb when looking at Cohen's d in t-tests: 
+
+* 0.2 is a small effect 
+* 0.5 is a moderate-sized effect 
+* 0.8 is a large effect  
+
+These heuristics on magnitude vary by the type of statistical model (and thus the statistic used to report effect size):
+
+[Effect Size Magnitude by Statistic](http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize)
+
+You determine the effect size for a power calculation by looking at previous research in the domain and using reported statistics to calculate the effect size, or if you are lucky a published meta-analysis will have done this for you already for a lot of studies and you can use the average effect size reported. 
+
+When Type I Error appears as 0% it just means it is less than 0.005 and the dashboard rounds the value (it is never actually zero). 
+
+Most studies use an alpha of 0.05 and beta of 0.80 because these values balance the trade-off between the two error rates. If one type of error is more costly in your context consider adjusting these while doing a power calculation. 
+
+<br>
+<br>
+
+
+
+
+
+## The Strength of Evidence
+
+CPP 524 is a course on research design. It might sound either straight-forward (you just create a treatment and control group and call it a day), or tedious. I suspect that by the end of the semester you will find the topic to be quite fun if you approach it the right way. 
+
+Research design and external review of other's research design can in fact be quite tedious because there are a lot of details to keep track of. You will _always_ have deficiencies in research design that prevent you from being 100% certain the results can be trusted, and it can be mentally taxing to weigh the evidence and decide whether you buy the results. 
+
+Not all evaluations are the same. Some provide robust and trustworthy estimates of program impact, and some provide noisy and indeterminate statistics where it is unclear what they actually represent. Whereas last semester we learned about using regression models to estimate the size of a slope, this course is meant to help you develop a qualitative notion of the **strength of evidence**. 
+
+Statistical signifance tells us the likelihood that the model slope differs from the model null, but it does not tell us if the null is a reasonable counterfactual and adequate steps have been taken to remove bias in the slope. Those both occur at the design phase, not the at the point of model estimation. 
+
+<br>
+<br>
+
+
+
+## Internal Validity as a Murder Mystery
+
+**Internal validity** is the term we use to measure whether our research design sufficient to say with confidence that changes we observe in the data are a result of the program only. In other words, having strong internal validity requires that we must eliminate all of the other salient competing hypotheses that offer an alternative explanation to the observed changes in the data. 
+
+We can treat this exercise as a murder mystery. Who created the changes in the data? Our leading theory is that the program did it, but we also must eliminate all of the other suspects. 
+
+We will use a check-list approach that we call a **Campbell Score**, which is a list of the ten most common competing hypotheses that weaken internal validity. We will use the check-list to practice reading research critically to look for holes in design. You will also use the tool to create a research design for a program of your choice, and think through which competing explanations you need to neutralize if you want your results to be compelling.  
+
+<br>
+<br>
 
 
 
@@ -256,55 +321,8 @@ More generally we need to think about what patterns in data we expect to see if 
 
 
 
-## Statistical Power Calculator
-
-[The NHST (Null Hypothesis Statistical Test) Ritual](https://rpsychologist.com/d3/NHST/)
-
-* alpha, the criteria used for rejecting the null (0.05) predicts the rate of Type I Errors in repeated samples 
-* beta ( 1 - power ) predicts the rate of Type II Errors in repeated samples 
-* effect size for a t-test (Cohen's d) tells you the distance between the observed population mean and the null 
-
-Note that increasing the sample size is unambiguously good in that it lowers Type I and Type II Errors, though there are always real economic costs of the sample in a study. 
-
-Similarly, a larger effect size is always better. If you have a very large effect it is easy to detect statistically even with a small sample. As a rule of thumb when looking at Cohen's d in t-tests: 
-
-* 0.2 is a small effect 
-* 0.5 is a moderate-sized effect 
-* 0.8 is a large effect  
-
-These heuristics on magnitude vary by the type of statistical model (and thus the statistic used to report effect size):
-
-[Effect Size Magnitude by Statistic](http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize)
-
-You determine the effect size for a power calculation by looking at previous research in the domain and using reported statistics to calculate the effect size, or if you are lucky a published meta-analysis will have done this for you already for a lot of studies and you can use the average effect size reported. 
-
-When Type I Error appears as 0% it just means it is less than 0.005 and the dashboard rounds the value (it is never actually zero). 
-
-Most studies use an alpha of 0.05 and beta of 0.80 because these values balance the trade-off between the two error rates. If one type of error is more costly in your context consider adjusting these while doing a power calculation. 
-
-<br>
-<br>
 
 
-
-## The Strength of Evidence
-
-CPP 524 is a course on research design. It might sound either straight-forward (you just create a treatment and control group and call it a day), or tedious. I suspect that by the end of the semester you will find the topic to be quite fun if you approach it the right way. 
-
-Research design and external review of other's research design can in fact be quite tedious because there are a lot of details to keep track of. You will _always_ have deficiencies in research design that prevent you from being 100% certain the results can be trusted, and it can be mentally taxing to weigh the evidence and decide whether you buy the results. 
-
-Not all evaluations are the same. Some provide robust and trustworthy estimates of program impact, and some provide noisy and indeterminate statistics where it is unclear what they actually represent. Whereas last semester we learned about using regression models to estimate the size of a slope, this course is meant to help you develop a qualitative notion of the **strength of evidence**. 
-
-Statistical signifance tells us the likelihood that the model slope differs from the model null, but it does not tell us if the null is a reasonable counterfactual and adequate steps have been taken to remove bias in the slope. Those both occur at the design phase, not the at the point of model estimation. 
-
-
-## Internal Validity as a Murder Mystery
-
-**Internal validity** is the term we use to measure whether our research design sufficient to say with confidence that changes we observe in the data are a result of the program only. In other words, having strong internal validity requires that we must eliminate all of the other salient competing hypotheses that offer an alternative explanation to the observed changes in the data. 
-
-We can treat this exercise as a murder mystery. Who created the changes in the data? Our leading theory is that the program did it, but we also must eliminate all of the other suspects. 
-
-We will use a check-list approach that we call a **Campbell Score**, which is a list of the ten most common competing hypotheses that weaken internal validity. We will use the check-list to practice reading research critically to look for holes in design. You will also use the tool to create a research design for a program of your choice, and think through which competing explanations you need to neutralize if you want your results to be compelling.  
 
 <br>
 <br>
