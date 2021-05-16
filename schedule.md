@@ -1,27 +1,36 @@
 ---
-layout: schedule
+layout: default
 title: Schedule
 
 canvas: 
   assignment_url: 'https://canvas.asu.edu/courses/86712/assignments'
+
+labs:
+  lab-01:  'Saturday, May 22nd' 
+  lab-02:  'Saturday, May 29th'
+  lab-03:  'Saturday, June 5th'
+  lab-04:  'Saturday, June 12th'
+  lab-05:  'Saturday, June 12th'
+  lab-06:  'Saturday, June 19th'
   
+project:
+  step-01:  'Tues May 25'
+  step-02:  'Tues June 1'
+  step-03:  'Tues June 8'
+  step-04:  'Tues June 15'
+  step-05:  'Tues June 15'
+  step-06:  'Tues June 22'
+
+final: 
+  project:    'Mon June 20'  
+  exam-date:  'Mon June 20  - Fri June 25'  
+
+pdf-root-url: "https://github.com/DS4PS/cpp-524-sum-2021/raw/main" 
+
 ---
- 
+
 <!--- 
-New sections start with 2 stars:  ** Section Title
-New units start with 3 stars:     *** {Unit Metadata}
------------------------------start example
-** Section-I
-*** { @unit = "15th Nov", @title = "Course Overview", @reading, @lecture, @assignment, @foldout }
------------------------------end example
-Unit Metadata is comprised of:
-@unit - date or number
-@title - unit name
-@reading - turn on reading icon
-@assignment - turn on lecture icon
-@lecture - turn on lecture icon
-@foldout - activate unit content (allow foldout)
-Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 -->
 
 
@@ -31,8 +40,132 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 
 
 
+<div class = "uk-container uk-container-small">
+  
+<br><br>
+<br><br>
+
+**COURSE CONTENT:**
+
+-----------------------
+
+* TOC
+{:toc}
+
+-----------------------
+
+<br>
 
 
+
+# Semester Overview 
+
+
+In the intro evaluation course you learned the basics of creating program input-output functions using regression models: for an additional input of X into the program (dollars of funding, time spent tutoring kids, reduction of class size) we expect to see a b1*X change in Y - the expected **program effect**. 
+
+You also learned that this estimate will only be causal if the program intervention is completely exogenous, or uncorrelated with all other competing explanations for the observed change in the data. This will only be true if the data is generated in an experimental setting so the treatment levels can be randomly assigned to program participants. That is the only way to ensure the policy or program variable (level of treatment received, for example the amount of caffeine in the pill) is uncorrelated with all other variables in the model. 
+
+Outside of an experimental setting each participant will choose their own behaviors, so caffeine consumption will be correlated with lifestyle, sleep deprivation, and income status - all things that can also influence the outcome. As a result, the slope b1 in the model will always contain bias from the omitted variables. 
+
+```
+Heart Rate = b0 + b1*Caffeine + e
+```
+
+The sad reality of regression analysis using cross-section observational data is that you can *almost NEVER* add enough control variables to reliably eliminate omitted variable bias. At the same time, it is often impossible, unethical, or impractical to use randomized control trials to study program impacts. Many impact studies are requested after the policy or program has been implemented and thus rely on observational data, or else they are forced to use administrative data because experimental manipulation is unfeasible. 
+
+As a result, to produce **causal estimates** of program impact using observational or administrative data you will need to build a quasi-experimental toolkit that allows you to manipulate your data to create reasonable counterfactual comparisons that approximate causal estimates. 
+
+
+This course teaches the skills needed to design an impact evaluation using a counterfactual framework, select the most appropriate quasi-experimental estimator, and conduct the necessary checks to ensure that enough model assumptions have been met and sufficient competing hypotheses have been eliminated to comfortably claim you have identified an unbiased estimate of program impact. 
+
+No single study is ever definitive and no model produces a flawless estimate of policy or program impact. But that does not mean that program impact is not knowable or all estimates are equally as good. One of the goals of this course is for you to develop an intuitive sense of the **quality** of evidence presented in a study so that you can become a more astute consumer and producer of evaluations. 
+
+Randomized Control Trials (RCTs) are the gold standard in evaluation because they tend to produce the most accurate (least biased) estimates of program impact. But it actually takes a lot less skill and creativity to design an RCT than it does to design a rigorous quasi-experimental study. The tools taught in this course and in CPP 525 Advanced Regression are the things that will differentiate a talented and employable evaluation specialist that is sought out when the programs are high-stakes and stakeholders want actionable information versus a general evaluation specialist that is hired to produce compliance reports that will usually go into a file cabinet and not lead to program improvements or funding re-allocations. 
+
+
+
+
+<br>
+
+## Course Cadence 
+
+You have weekly labs, a final project that requires you to design (but not implement) a hypothetical evaluation of a program or policy of your choice), and a low-stakes (10 point) final exam that gives you an opportunity to review and synthesize all of the course content so you can consolidate the information in your brain. 
+
+Note that each week you will submit a lab on Saturday and a step for your research design project on Tuesday. If you keep up with the research design steps and incorporate feedback you can minimize the end-of-semester bottleneck. 
+
+![](../assets/img/course-cadence.png)
+
+<br>
+
+
+Get started early on labs so you have time to ask questions on the discussion board if you get stuck. 
+
+Labs are graded pass-fail. The criteria is that you demonstrate an understanding of the topics covered, which is typically operationalized as getting over half of the questions on the assignment correct. 
+
+The project steps are not graded until the final design proposal is submitted at the end, but you will recieve feedback on how much work needs to be done to improve each step to earn an A on the project.  
+
+The final exam is an open-book two-hour exam taken via Canvas. You can start it at any time during the final week of class, but once you start it you can't pause it and finish it later. 
+
+
+
+<br>
+
+## Tips for Success
+
+**Similar to other core courses in this program there is no way to learn and retain all of this material in a semester.** 
+
+We repeat some concepts from CPP 523 and introduce other concepts you will revisit in CPP 525 so that material is reinforced. Labs are an opportunity to test yourself and expand your vocabulary and regression skills. **Active engagement** on discussion boards and in review sessions is a great way to consolidate information in your brain. The biggest barrier to learning is often your own ego or lack of curiosity.  
+
+You are investing in a skill-set that you will build over time. You will find some material organized for quick reference on the [Resources](../resources/) page. 
+
+You are encouraged to build your own library of sources you find useful and keep them for future reference. 
+
+
+
+<br>
+
+## Getting Help
+
+Learning how to seek help and use discussion boards will accelerate learning and facilitate collaboration. Social coding tools like GitHub use these features extensively. 
+
+We are going to throw a lot at you, but also provide a lot of support. Over these first couple of weeks feel free to reach out for anything you might need. 
+
+If you find something confusing let us know (likely others will find it confusing as well). 
+
+* You can post a question to the homework [discussion board](../help/).  
+* You can schedule a Zoom call to do a screen share if you want to walk through anything. 
+* Or you can request a walk-through of a problem. The instructor will provide an example with the solution. 
+
+As a general rule of thumb, if you are stuck on the math or code for a problem, need clarification about what the question is asking, want to make sure you understand a formula, or are having similar issues then the help discussion page is the easiest and quickest way to get help. 
+
+If you are confused about concepts or having a hard time even formulating your question then virtual office hours are your best option.
+
+Note that the discussion board is hosted by the GitHub issues feature. It is a great forum because:
+
+* You can format code and math using standard markdown syntax. 
+* You can cut and paste images directly into the message. 
+* You can direction responses using @username mentions. 
+
+Please preview your responses before posting to ensure proper formatting. Note that you format code by placing fences around the code:
+
+````
+```
+# your code here
+lm( y ~ x1 + x2 )
+
+# formulas
+y = b0 + b1•X1 + b2•X2 + e
+b1 = cov(x,y) / var(x)
+```
+````
+
+The fences are three back-ticks. These look like quotation marks, but are actually the character at the top left of your keyboard. 
+
+
+
+<br>
+<hr>
+<br>
 
 
 
@@ -50,15 +183,11 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 -->
 
 
-** Week 1 - Counterfactual Analysis
+# Week 1 - Counterfactual Analysis
 
 
 
-
-
-*** { @unit = "", @title = "Unit Overview", @reading, @foldout  }
-
-## Description 
+## Overview
 
 This section provides introduces the concept of a counterfactual reasoning. Key terms include: 
 
@@ -68,17 +197,17 @@ This section provides introduces the concept of a counterfactual reasoning. Key 
 * null hypothesis 
 
 
-## Learning Objectives
+**Learning Objectives**
 
 Once you have completed this section you will be able to construct key elements of a randomized control trial to determine if it has been implemented correctly. 
 
 
 
-## Lab Preview 
+**Lab Preview**  
 
 For Lab-01 you will read an example of a Randomized Control Trial used to study a nutrition and early childhood education program in Columbia. 
 
-*Bingham, R., & Felbinger, C. (2002). Evaluation in practice: A methodological approach. CQ Press.* 
+*Bingham, R., & Felbinger, C. (2002). Evaluation in practice: A methodological approach. CQ Press.*  
 * CH-05: Improving Cognitive Ability in Chronically Deprived Children [[pdf](../pubs/eval-in-practice-CH5-randomized-control-trial.pdf)]
 
 The lab asks for you to report on features of the research design and identify core concepts in the study:
@@ -90,14 +219,7 @@ The lab asks for you to report on features of the research design and identify c
 * Confounding factors 
 
 
-<br>
-<br>
-
-
-
-## Assigned and Recommended Articles or Chapters
-
-### Required:
+**Required Reading:**
 
 [Core Concepts in Research Design](../core-concepts) 
 
@@ -105,18 +227,15 @@ The lab asks for you to report on features of the research design and identify c
 * Chapter 3. Causal Inference and Counterfactuals 
 * Chapter 4. Randomized Selection Methods  
 
-### Background: 
+**Background:** 
 
 Reichardt, C. S., & Bormann, C. A. (1994). Using regression models to estimate program effects. Handbook of practical program evaluation, 417-455. [ [pdf](https://github.com/DS4PS/cpp-523-fall-2019/raw/master/pubs/Estimating%20Program%20Effects%20Using%20Regression%20Models.pdf) ]
 
 
 
-
-
-*** { @unit = "TUES Jan 19th", @title = "LAB 01", @assignment, @foldout   }
-
-
 ## Lab 01 - Counterfactual Reasoning with RCTs
+
+**Due {{page.labs.lab-01}}**
 
 This lab covers the following topics: 
 
@@ -133,7 +252,7 @@ Read: *Bingham, R., & Felbinger, C. (2002). Evaluation in practice: A methodolog
 
 Answer the questions in the word document: 
 
-<a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-524-spr-2020/raw/master/labs/lab-01-instructions.docx">Lab-01 Instructions</a>
+<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/labs/lab-01-instructions.docx">Lab-01 Instructions</a>
 
 Save it using the naming convention:
 
@@ -147,16 +266,13 @@ And submit via Canvas.
 <br>
 
 
-*** { @unit = "FRI Jan 22nd", @title = "Final Project Step-01", @assignment, @foldout }
+## Final Project Step-01
 
-<br>
-<br>
-
-## Final Project Overview 
+**Due {{page.project.step-01}}**
 
 Your final project in this course is a memo that outlines a proposed research design that would be necessary to measure impact of a policy or program if a Randomized Control Trial is disallowed for practical or financial reasons (pedagogically because it solves many of your internal validity issues - this class is an opportunity to practice quasi-experimental approaches to causal inference). 
 
-## Step 01 - Pick Your Topic
+**Step 01 - Pick Your Topic**
 
 For the first step of your project you will fill out a one-page form to describe your proposed study with details on the program you will evaluate, the outcome of interest, and the population targetted by the program. 
 
@@ -164,7 +280,7 @@ This first step is designed to get feedback from the instructor in order to ensu
 
 See page 4 of the project instructions PDF for an example of Step 01 memo format:
 
-<a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-524-spr-2020/raw/master/labs/final-paper-instructions.pdf">Project Instructions</a>
+<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/labs/final-paper-instructions.pdf">Project Instructions</a>
 
 When you are complete:
 
@@ -190,33 +306,32 @@ When you are complete:
 -->
 
 
-** Week 2 - Varieties of the Counterfactual  
+# Week 2 - Varieties of the Counterfactual  
 
 
 
-*** { @unit = "", @title = "Unit Overview", @reading, @foldout }
+## Overview 
 
-## Description 
 
 This week introduces the notion of counterfactual reasoning using quasi-experimental design. 
 
-## Learning Objectives
+**Learning Objectives**  
 
 * Be able to define and explain what is meant by "counterfactual reasoning" broadly. 
 * Explain the three primary counterfactuals in all statistics models. 
 * Apply the appropriate tests to determine whether the counterfactual is appropriate and robust. 
 
-## Lecture Materials
+**Lecture Materials**  
 
-* [**Introduction to Counterfactuals**](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-01-intro-to-counterfactuals.pdf)
+* [**Introduction to Counterfactuals**]({{page.pdf-root-url}}/lectures/p-01-intro-to-counterfactuals.pdf)
 
-* [**Testing the Counterfactual Validity**](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-02-tests-for-cf-validity.pdf)
+* [**Testing the Counterfactual Validity**]({{page.pdf-root-url}}/lectures/p-02-tests-for-cf-validity.pdf)
 
   - Pre-study equivalence 
   - Tests for non-random attrition 
 
 
-* [**Varieties of the Counterfactual**](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-03-varieties-of-counterfactuals.pdf)
+* [**Varieties of the Counterfactual**]({{page.pdf-root-url}}/lectures/p-03-varieties-of-counterfactuals.pdf)
 
   - Pre-post with comparison group design 
     - difference-in-difference model  
@@ -224,12 +339,9 @@ This week introduces the notion of counterfactual reasoning using quasi-experime
   - Reflexive design 
 
 
-## Recommended Articles or Chapters
+**Suggested Reading:**
 
-
-**Suggested:**
-
-Cook, T. D., Scriven, M., Coryn, C. L., & Evergreen, S. D. (2010). Contemporary thinking about causation in evaluation: A dialogue with Tom Cook and Michael Scriven. American Journal of Evaluation, 31(1), 105-117. [ [LINK](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/pubs/conversation-with-tom-cook-and-michael-scriven.pdf) ]
+Cook, T. D., Scriven, M., Coryn, C. L., & Evergreen, S. D. (2010). Contemporary thinking about causation in evaluation: A dialogue with Tom Cook and Michael Scriven. American Journal of Evaluation, 31(1), 105-117. [ [LINK]({{page.pdf-root-url}}/pubs/conversation-with-tom-cook-and-michael-scriven.pdf) ]
 
 Skim: Gertler, P. J., Martinez, S., Premand, P., Rawlings, L. B., & Vermeersch, C. M. (2016). *Impact evaluation in practice.* The World Bank.  
 * CH5 Regression Discontinuity Design   
@@ -238,12 +350,13 @@ Skim: Gertler, P. J., Martinez, S., Premand, P., Rawlings, L. B., & Vermeersch, 
 
 
 
-## Key Take-Aways 
+**Key Take-Aways**  
 
 We rarely have the resources or opportunity to utilize Randomized Control Trials (RCTs) in policy and management. There is a growing field of quasi-experimental methodologies that allow us to reproduce many of the features of RCTs to make strong causal claims when certain conditions are met. 
 
 
 <br>
+<hr>
 <br>
 
 
@@ -251,13 +364,11 @@ We rarely have the resources or opportunity to utilize Randomized Control Trials
 
 
 
-*** { @unit = "TUES Jan 26th", @title = "LAB 02", @assignment, @foldout }
+## Lab 02
 
+**Due {{page.labs.lab-02}}**
 
-<br>
-<br>
-
-# Lab 02 Part I: Test for Group Equivalence 
+### Part I: Test for Group Equivalence
 
 
 <a class="uk-button uk-button-default" href="../labs/lab-02-equivalence-tests.html">Lab-02 Instructions</a>
@@ -269,9 +380,9 @@ When you are complete:
 <br>
 <br>
 
-# Lab 02 Part II: News Article Discussion 
+### Part II: News Article Discussion
 
-## Apples to Apples 
+**Apples to Apples**
 
 Counterfactuals are simultaneously very intuitive and very challenging. 
 
@@ -330,12 +441,13 @@ What has to be true for a control variable to make an effect disappear?
 
 
 
-*** { @unit = "FRI Jan 29th", @title = "Final Project Step-02", @assignment, @foldout }
+## Final Project Step-02
 
-<br>
-<br>
+**Due {{page.project.step-02}}**
 
-## Step 02 - Measure Your Outcome
+
+
+### Measure Your Outcome
 
 You need to identify one to three metrics that will be used to measure the outcome in your study. 
 
@@ -347,7 +459,7 @@ You will report the instrument(s) and their reliability measures.
 
 -----
 
-## What is an "instrument" in social science? 
+### What is an "instrument" in social science? 
 
 > Many variables studied by psychologists are straightforward and simple to measure. These include sex, age, height, weight, and birth order. You can often tell whether someone is male or female just by looking. You can ask people how old they are and be reasonably sure that they know and will tell you. Although people might not know or want to tell you how much they weigh, you can have them step onto a bathroom scale. Other variables studied by psychologists—perhaps the majority—are not so straightforward or simple to measure. We cannot accurately assess people’s level of intelligence by looking at them, and we certainly cannot put their self-esteem on a bathroom scale. **These kinds of variables are called LATENT CONSTRUCTS** (pronounced CON-structs) and include personality traits (e.g., extraversion), emotional states (e.g., fear), attitudes (e.g., toward taxes), and abilities (e.g., athleticism). 
 
@@ -499,17 +611,15 @@ Useful background reading or reference chapters:
 ######################################################
 -->
 
-** Week 3 - Campbell Scores 
+# Week 3 - Campbell Scores 
 
-*** { @unit = "", @title = "Unit Overview", @reading, @foldout}
-
-## Description 
+## Overview
 
 This unit introduces a framework for evaluating the internal validity of a study using a 10-item "Campbell Score". 
 
 The tool helps you develop the skill of reading research in a systematic fashion to identify the subtle details that impact research quality. In doing so it also helps you develop intuition about how to better design your own studies, and how to communicate study design to stakeholders. 
 
-## Learning Objectives
+**Learning Objectives**
 
 After mastering Campbell Scores you will be able to:
 
@@ -517,52 +627,47 @@ After mastering Campbell Scores you will be able to:
 * More efficiently read evaluation studies by knowing specific tests the author should present to make their case. 
 * Develop intuition about how to best design your own evaluation studies and how to package the description of your research design so that it is accessible to others. 
 
-<br>
-<br>
+
+**Lecture Materials**
 
 
-## Lecture Materials
+From Last Week:
 
+[Introduction to Counterfactuals]({{page.pdf-root-url}}/lectures/p-01-intro-to-counterfactuals.pdf)
 
-### From Last Week 
+[Tests for CF Validity]({{page.pdf-root-url}}/lectures/p-02-tests-for-cf-validity.pdf) 
 
-[Introduction to Counterfactuals](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-01-intro-to-counterfactuals.pdf)
+[The Three Counterfactual Estimators]({{page.pdf-root-url}}/lectures/p-03-varieties-of-counterfactuals.pdf)
 
-[Tests for CF Validity](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-02-tests-for-cf-validity.pdf) 
+New This Week:
 
-[The Three Counterfactual Estimators](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-03-varieties-of-counterfactuals.pdf)
-
-### New This Week 
-
-[Campbell Scores Overview](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-07-campbell-scores-v2.pdf)
+[Campbell Scores Overview]({{page.pdf-root-url}}/lectures/p-07-campbell-scores-v2.pdf)
 
 [Campbell Scores Examples](https://ds4ps.org/cpp-524-spr-2020/lectures/CampbellScore.html)
 
-<br>
-<br>
 
 
-*** { @unit = "TUES Feb 2nd", @title = "LAB 03", @assignment, @foldout  }
+## LAB 03
 
-<br>
+**Due {{page.labs.lab-03}}**
 
-# Lab 03 - Campbell Scores 
+**Campbell Scores**
 
 This lab is a chance to practice an essential skill in evaluation - critical evaluation of research design to assess the strength of claims made by the study. 
 
 You will be reviewing the following chapters from *Bingham, R., & Felbinger, C. (2002). Evaluation in practice: A methodological approach. CQ Press.*:
 
-[CH7 Post-Test Only Estimator](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/pubs/eval-in-practice-CH7-hospital-follow-up-care.pdf)
+[CH7 Post-Test Only Estimator]({{page.pdf-root-url}}/pubs/eval-in-practice-CH7-hospital-follow-up-care.pdf)
 
-[CH8 Pre-Post with Comparison](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/pubs/eval-in-practice-CH8-energy-savings.pdf)
+[CH8 Pre-Post with Comparison]({{page.pdf-root-url}}/pubs/eval-in-practice-CH8-energy-savings.pdf)
 
-[CH11 Reflexive Study Design](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/pubs/eval-in-practice-CH11-nutrition-behavior-change.pdf) 
+[CH11 Reflexive Study Design]({{page.pdf-root-url}}/pubs/eval-in-practice-CH11-nutrition-behavior-change.pdf) 
 
 You will report the result for each item of the Campbell Score for each study and give your reasoning for the score on each item (a +1 if the threat to validity or competing hypothesis is adequately neutralized in the study, and +0 if the threat was not eliminated). Here are some example solutions based upon CH5 that you reviewed for the first lab.  
 
-[Example Solution](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/labs/Campbell-Scores-CH5%20-SOLUTIONS.pdf)
+[Example Solution]({{page.pdf-root-url}}/labs/Campbell-Scores-CH5%20-SOLUTIONS.pdf)
 
-<a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-524-spr-2020/raw/master/labs/campbell-score-instructions.pdf">Campbell Score Instructions</a>
+<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/labs/campbell-score-instructions.pdf">Campbell Score Instructions</a>
 
 When you are complete:
 
@@ -574,12 +679,12 @@ When you are complete:
 
 
 
-*** { @unit = "FRI Feb 5th", @title = "Final Project Step-03", @assignment, @foldout }
+## Final Project Step-03
 
-<br>
-<br>
+**Due {{page.project.step-03}}**
 
-## Step 03 - Theory of Change
+
+### Step 03 - Theory of Change
 
 Each program has a theory of change that is used to articulate the intended program steps and the relationships between program activities and client outcomes. 
 
@@ -587,16 +692,16 @@ For this step you will learn how to diagram a theory of change and describe your
 
 Before completing Step 03, read the following documents that describe the theory of change methodology. Start with an example that walks through the steps for a specific program:
  
-* [Example of a TOC Design: The Superwoman Program](https://github.com/DS4PS/cpp-524-sum-2020/raw/master/final-project/reference/superwoman-program-theory-of-change.pdf)  
+* [Example of a TOC Design: The Superwoman Program]({{page.pdf-root-url}}/final-project/reference/superwoman-program-theory-of-change.pdf)  
 
 Then read the guide to creating a theory of change: 
 
-* [Building a Theory of Change (summary)](https://github.com/DS4PS/cpp-524-sum-2020/raw/master/final-project/reference/theory-of-change-methodology.pdf)   
-* [Building a Theory of Change (full version)](https://github.com/DS4PS/cpp-524-sum-2020/raw/master/final-project/reference/theory-of-change-guide.pdf)  
+* [Building a Theory of Change (summary)]({{page.pdf-root-url}}/final-project/reference/theory-of-change-methodology.pdf)   
+* [Building a Theory of Change (full version)]({{page.pdf-root-url}}/final-project/reference/theory-of-change-guide.pdf)  
 
 *These steps are marked for feedback but not graded.*
 
-<a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-524-sum-2020/raw/master/final-project/step-03-theory-of-change.pdf">Step-03 Instructions</a>
+<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/final-project/step-03-theory-of-change.pdf">Step-03 Instructions</a>
 
 When you are complete submit your section draft:
 
@@ -605,7 +710,7 @@ When you are complete submit your section draft:
 
 You may find these additional background readings helpful: 
 
-* [Additional Guides to Using a Theory of Change](https://github.com/DS4PS/cpp-524-sum-2020/raw/master/final-project/reference/theory-of-change-readings.zip)
+* [Additional Guides to Using a Theory of Change]({{page.pdf-root-url}}/final-project/reference/theory-of-change-readings.zip)
 
 <br>
 <br>
@@ -622,24 +727,20 @@ You may find these additional background readings helpful:
 ######################################################
 -->
 
-** Week 4 - More Campbell Scores 
+# Week 4 - More Campbell Scores 
 
-*** { @unit = "", @title = "Unit Overview", @reading, @foldout }
-
-## Description 
+## Overview
 
 This week you will continue with your critical assessment of research design to assess internal validity in the case studies using the Campbell Scores framework. 
 
-
-
-## Lecture Materials
+**Lecture Materials**
 
 There are no new lecture materials. But these exercises will again draw from the notes on counterfactual reasoning and Campbell Score rules:
 
-* [Introduction to Counterfactuals](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-01-intro-to-counterfactuals.pdf)
-* [Tests for CF Validity](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-02-tests-for-cf-validity.pdf) 
-* [The Three Counterfactual Estimators](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-03-varieties-of-counterfactuals.pdf)
-* [Campbell Scores Overview](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/lectures/p-07-campbell-scores-v2.pdf)
+* [Introduction to Counterfactuals]({{page.pdf-root-url}}/lectures/p-01-intro-to-counterfactuals.pdf)
+* [Tests for CF Validity]({{page.pdf-root-url}}/lectures/p-02-tests-for-cf-validity.pdf) 
+* [The Three Counterfactual Estimators]({{page.pdf-root-url}}/lectures/p-03-varieties-of-counterfactuals.pdf)
+* [Campbell Scores Overview]({{page.pdf-root-url}}/lectures/p-07-campbell-scores-v2.pdf)
 * [Campbell Scores Examples](https://ds4ps.org/cpp-524-spr-2020/lectures/CampbellScore.html)
 
 
@@ -652,16 +753,13 @@ Case studies will again be from *Bingham, R., & Felbinger, C. (2002). Evaluation
 
 
 
-*** { @unit = "TUES Feb 9th", @title = "LAB 04", @assignment, @foldout  }
+## Lab 04
 
-<br>
-<br>
-
-# Lab 04
+**Due {{page.labs.lab-04}}** 
 
 For this lab you will again apply Campbell Scores to two more chapters, but this time both chapters are using the same data to answer the same research question. This is a nice case study because it shows how two groups of skilled researchers can make different choices about how to analyze data, and as a result arrive at different conclusions about program effectiveness. 
 
-[Evaluation of School Choice Program](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/pubs/eval-in-practice-CH20-CH21-school-choice.pdf)  
+[Evaluation of School Choice Program]({{page.pdf-root-url}}/pubs/eval-in-practice-CH20-CH21-school-choice.pdf)  
 
 The last two chapters present a bit of a riddle. You have two studies evaluating the exact same program using the same data, but they come to different conclusions (CH20 concludes that the program is ineffective, CH21 concludes it is effective). So how do the studies differ? 
 
@@ -674,7 +772,7 @@ Also, **what are the time-frames used for analysis in each chapter**? Be careful
 
 Here is the hint: if a study collects data over four years but then only uses data from one of the years for analysis, what would the time frame of the study be, four years or one?
 
-<a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-524-spr-2020/raw/master/labs/campbell-score-instructions.pdf">Campbell Score Instructions</a>
+<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/labs/campbell-score-instructions.pdf">Campbell Score Instructions</a>
 
 When you are complete:
 
@@ -688,20 +786,19 @@ When you are complete:
 
 
 
-*** { @unit = "FRI Feb 12th", @title = "Final Project Step-04", @assignment, @foldout }
+## Final Project Step-04
 
-<br>
-<br>
+**Due {{page.project.step-04}}**
 
-## Step 04 - Diagram Your Counterfactual
+### Step 04 - Diagram Your Counterfactual
 
 Review the following example that walks through the steps of diagramming a counterfactual as part of a research design exercise. 
 
-[Diagram Your Research Design](https://github.com/DS4PS/cpp-524-sum-2020/raw/master/final-project/step-04-diagram-your-research-design.pdf)
+[Diagram Your Research Design]({{page.pdf-root-url}}/final-project/step-04-diagram-your-research-design.pdf)
 
 Then complete the following project step: 
 
-<a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-524-sum-2020/raw/master/final-project/step-04-diagram-your-study-design.pdf">Step-04 Instructions</a>
+<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/final-project/step-04-diagram-your-study-design.pdf">Step-04 Instructions</a>
 
 When you are complete submit your section draft:
 
@@ -729,15 +826,11 @@ When you are complete submit your section draft:
 -->
 
 
-** Week 5 - Final Lab  
+# Week 5 
 
 
 
-*** { @unit = "", @title = "Overview", @foldout }
-
-<br>
-
-## Final Projects
+## Overview
 
 You have two final assignments for the class. The most important one is the hypothetical research design described under the **Research Design Paper** assignment. You will be asked to serve as an outside expert to help an evaluation team architect a valid and robust impact study of one of their programs. 
 
@@ -745,7 +838,7 @@ The **Final Lab** will consist of as assessment of the size of the gender pay ga
 
 See the instruction for details. 
 
-## Office Hours
+**Office Hours** 
 
 At this point you should have feedback on your research design memo and practice with internal validity from the Campbell Scores. Schedule office hours if you need help selecting an appropriate counterfactual (reflexive, post-test only, or pre-post with comparison) or have other clarifying questions to discuss. You are close to the end of the semester, so now is the time to get input!  
 
@@ -753,10 +846,9 @@ At this point you should have feedback on your research design memo and practice
 <br>
 
 
-*** { @unit = "TUES Feb 16th", @title = "LAB 05", @assignment, @foldout }
+## LAB 05
 
-<br>
-<br>
+**Due {{page.labs.lab-05}}**
 
 This final lab offers an opportunity to synthesize material on counterfactuals by calculating program impact in a couple of different ways with the same data set and thinking about which estimator (counterfactual) best suits the research question. 
 
@@ -764,7 +856,7 @@ You are asked to estimate the gender pay gap of nonprofit executive directors us
 
 You will see that the pay gap will change when you change the estimator. The goal is to try and determine which estimate is the best and most unbiased measure for the gender pay gap. 
 
-## Incorporating Research Design Principles into Models 
+**Incorporating Research Design Principles into Models**  
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-524-sum-2020/labs/lab-05-gender-wage-gap.html">Lab-05 Instructions</a>
 
@@ -796,21 +888,16 @@ You will see that the pay gap will change when you change the estimator. The goa
 ######################################################
 -->
 
-** Week 6 - Research Design Memo  
+# Week 6 
 
 
 
 
-*** { @unit = "TUE Feb 23rd", @title = "Research Design Memo", @assignment, @foldout }
+## Research Design Memo
 
-<br>
-<br>
+**Due {{page.final.project}}**
 
-## Instructions
-
-[Assignment Instructions](https://github.com/DS4PS/cpp-524-spr-2020/raw/master/labs/final-paper-instructions.pdf)
-
-<br>
+[Assignment Instructions]({{page.pdf-root-url}}//labs/final-paper-instructions.pdf)
 
 Choose a well-established program that has a clear goal, a clear scope, and where you expect to achieve impact in a relatively short time frame (a few years). The point of the assignment is to practice thinking through and communicating important evaluation considerations. 
 
@@ -819,9 +906,7 @@ Keep the program model simple! If you select a complicated program that has poor
 By the time you are done writing up details you will likely have 10 to 20 pages of text (double-spaced). 
 
 
-<br>
-
-### Submit Your Paper
+**Submit Your Paper**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Your Paper</a>
 
@@ -834,38 +919,22 @@ By the time you are done writing up details you will likely have 10 to 20 pages 
 
 
 
-
-
-<!--- 
-######################################################
-####
-####      Week 7 - Research Design Projects 
-####
-######################################################
--->
-
-** Week 7 - Final Exam 
-
-
-
-*** { @unit = "", @title = "Overview", @foldout }
-
-<br>
-
 ## Final Exam
 
-* [Study Guide](https://github.com/DS4PS/cpp-524-spr-2021/raw/main/final-exam/cpp-524-final-exam-study-guide.pdf)  
-* [Practice Questions](https://github.com/DS4PS/cpp-524-spr-2021/raw/main/final-exam/final-exam-practice-questions.pdf)  
-
-
-*** { @unit = "FEB 27 - MARCH 2", @title = "Final Exam Open", @assignment, @foldout }
-
-The final exam will be open from Saturday Feb 27th to Tuesday March 2nd. 
+**The final exam will be open: {{page.final.exam-date}}**
 
 You will have 2 hours to complete the exam once you start, but you cannot start, pause, and come back to it. 
 
+
+* [Study Guide]({{page.pdf-root-url}}/final-exam/cpp-524-final-exam-study-guide.pdf)  
+* [Practice Questions]({{page.pdf-root-url}}//final-exam/final-exam-practice-questions.pdf)  
+
+-----
+
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">BEGIN FINAL EXAM</a>
 
+-----
+
 
 <br>
 <br>
@@ -874,32 +943,67 @@ You will have 2 hours to complete the exam once you start, but you cannot start,
 
 
 
-<style> 
-body {
-   font-family: "Roboto", sans-serif;
-}
- 
-p.italic {
-  font-style: italic;
-  color: black !important;
-}
-td {
-  text-align: left;
-}
-td.i {
-  text-align: center;
-}
-iframe {
-  align: middle;
-}
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+<style>
 em {
-  color: black !important;
+    color: black;
+} 
+h2{
+  font-size:calc(2em + 0.25vw) !important;
+  color: #995c00;
+  font-weight:300;
+  margin-top:40px !important;
+  margin-bottom:20px;
+  } 
+
+h3{
+  font-size:calc(1.4em + 0.25vw);
+  font-weight:300;
+  margin-top:20px !important;
+  margin-bottom:10px;} 
+   
+
+ul a:hover {
+  color: #337ab7;
+  text-decoration: none;
+  font-weight: normal;
+} 
+
+#markdown-toc ul {
+  font-size:calc(0.85em + 0.25vw);
+  line-height:1.2;
+  font-weight: bold;
+} 
+#markdown-toc ul li {
+  list-style-type: disc !important;
+  font-size:calc(0.65em + 0.25vw);
+  line-height:1.2;
+  margin-left: 20px;
+}  
+#markdown-toc a {
+  color: black;
+  font-size:calc(0.65em + 0.25vw);
+  line-height:1.2;
+  font-weight: normal;
+}  
+#markdown-toc a:hover {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
-article {
-  padding-left:20%;
-}
+
 </style>
-
-<br>
-<br>
-
