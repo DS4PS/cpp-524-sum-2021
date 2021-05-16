@@ -10,16 +10,13 @@ labs:
   lab-02:  'Saturday, May 29th'
   lab-03:  'Saturday, June 5th'
   lab-04:  'Saturday, June 12th'
-  lab-05:  'Saturday, June 12th'
-  lab-06:  'Saturday, June 19th'
+  lab-05:  'Saturday, June 19th'
   
 project:
   step-01:  'Tues May 25'
   step-02:  'Tues June 1'
   step-03:  'Tues June 8'
   step-04:  'Tues June 15'
-  step-05:  'Tues June 15'
-  step-06:  'Tues June 22'
 
 final: 
   project:    'Mon June 20'  
@@ -233,11 +230,11 @@ Reichardt, C. S., & Bormann, C. A. (1994). Using regression models to estimate p
 
 
 
-## Lab 01 - Counterfactual Reasoning with RCTs
+## Lab 01 
 
 **Due {{page.labs.lab-01}}**
 
-This lab covers the following topics: 
+This lab covers Counterfactual Reasoning with RCTs
 
 * Randomization processes 
 * Complex control groups  
@@ -647,7 +644,7 @@ New This Week:
 
 
 
-## LAB 03
+## Lab 03
 
 **Due {{page.labs.lab-03}}**
 
@@ -846,7 +843,7 @@ At this point you should have feedback on your research design memo and practice
 <br>
 
 
-## LAB 05
+## Lab 05
 
 **Due {{page.labs.lab-05}}**
 
