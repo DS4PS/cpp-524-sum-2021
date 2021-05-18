@@ -19,8 +19,8 @@ project:
   step-04:  'Tues June 15'
 
 final: 
-  project:    'Mon June 20'  
-  exam-date:  'Mon June 20  - Fri June 25'  
+  project:    'Mon June 21'  
+  exam-date:  'Mon June 21  - Fri June 25'  
 
 pdf-root-url: "https://github.com/DS4PS/cpp-524-sum-2021/raw/main" 
 
