@@ -24,6 +24,8 @@ final:
 
 pdf-root-url: "https://github.com/DS4PS/cpp-524-sum-2021/raw/main" 
 
+yellowdig: "https://canvas.asu.edu/courses/86712/assignments/2210979"
+
 ---
 
 <!--- 
@@ -413,7 +415,7 @@ Find a story **reporting on research that was published in PEER-REVIEWED academi
 
 Report your findings on YellowDig with a link to the news story. 
 
-<a class="uk-button uk-button-primary" href="https://canvas.asu.edu/courses/56453/assignments/1339826">YELLOWDIG</a>
+<a class="uk-button uk-button-primary" href="{{page.yellowdig}}">YELLOWDIG</a>
 
 
 As an example, here is an excerpt from the story, **[Weed may not ease sleep problems, especially for regular users, studies say](https://www.cnn.com/2020/01/20/health/weed-sleep-debunk-wellness/index.html)**. 
