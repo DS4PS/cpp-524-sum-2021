@@ -2,9 +2,9 @@
 layout: reviews
 
 info:
-- day: THURSDAYS
-- time:  7:30 PM AZ
-- zoom-link: https://asu.zoom.us/j/6829300585
+  day: THURSDAYS
+  time:  7:30 PM AZ
+  zoom-link: https://asu.zoom.us/j/6829300585
 
 session: 
 - week0:
