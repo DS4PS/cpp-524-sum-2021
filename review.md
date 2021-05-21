@@ -1,27 +1,30 @@
 ---
-layout: default
+layout: reviews
 
-session:
-  week0: 'https://asu.zoom.us/rec/share/S9f4_FfCJMMbgzJlzh21IfhZ8zbbHwAwmSzXnAiLpue9k22h8M9HIceNQd7Hkh4.-DB46bIIRmW71PYY'
-  week1: 'https://asu.zoom.us/rec/share/NAMz6VZLnbFLocoEjMSDvJTp0aq0QC9KqtRgcdd74qBH5N8g8uMXJoYHLsCIj2yw.K41RJVgwFdlsVLLR'
-  week2: 'https://asu.zoom.us/rec/share/ykQW7UWGDSjF21bdQv1oS7_7LwA0cPsVp5CqZ128o6U5JjkAHw8VwIc8N2WX7qXm.aoX8wGkjjqRNT_DO'
-  week3: 'https://asu.zoom.us/rec/share/PI40VPYJPhge640hgoBi14-YzdvPTS15Z6Mk1M90cb8V-bUpGM0wZbk-auZ85UYP.UbRzx62wATNCCTIY'
-  week5: 'https://asu.zoom.us/rec/share/fD6tu8qzlHzGkH47HEX8xNCIS-bZ4paDn6UgJVyxn1OXMohdHE-Ly9p2i13skbiO.Yc2PyEfwJNhFwm70'
-  week6: 'https://asu.zoom.us/rec/share/75_z4U6lThX8-TgO1ho56dIOYEopP588pDf92sqSVJiqz0eGv1qSu2hgJvM2P-WY.uY0KJgPjFWbUFgGp'
+info:
+- day: THURSDAYS
+- time:  7:30 PM AZ
+- zoom-link: https://asu.zoom.us/j/6829300585
 
-password: 
-  week0: '#Myh6Xy!'
-  week1: 'm5sJY$cm'
-  week2: '5.Y1f$T6'
-  week3: 'Fhh\*4\*2B'
-  week5: 'Nq44j&f0'
-  week6: 'fj^w=93q'
- 
- 
+session: 
+- week0:
+  date: 'THUR May 20'
+  video: ''
+  password: '' 
+- week1:
+  date:  'THUR May 27'  
+  video: ''
+  password: ''
+  sample-code: '' 
+  session-code: '' 
+
+root-url: 'https://raw.githubusercontent.com/DS4PS/cpp-524-sum-2021/master/review-sessions/'
+
 ---
 
-<div class = "uk-container uk-container-small">
-  
+
+
+
 <br><br>
 
 # Review Sessions 
@@ -38,14 +41,15 @@ Live review sessions will be held each week in order to:
 <br>
 
 
-> **MONDAYS**    
-> **6pm AZ time** 
+> **{{page.info.day}}**    
+> **{{page.info.time}}** 
 
-<a href='https://asu.zoom.us/j/84210278039' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
+<a href='{{page.info.zoom-link' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
 
 <br>
 
-> **Add to your calendar:** <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NG9qa3FpZmxhZmo0MGFqYzJkNmhsdWNodTRfMjAyMTAxMTlUMDEwMDAwWiBqZGxlY3lAbQ&amp;tmsrc=jdlecy%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
+
+
 
 <br> 
 <hr>
@@ -56,165 +60,16 @@ To make the best use of sessions I recommend starting labs ahead of time so that
 
 For those that cannot attend recordings of each session will be posted below. 
 
-Feel free to schedule virtual office hours as well.   
-
-* Courtney Stowers: [AVAILABILITY](https://calendly.com/courtney-stowers)
-* Jesse Lecy: [AVAILABILITY](https://calendly.com/lecy/30min)
-
-
-<br> 
-<hr>
-<br>
-<br>
+Feel free to schedule virtual office hours as well!  
 
 
 
-## Week 0 - Wed Jan 13th
-
-Introduction to the Course 
-
-<p align="center">
-  <a href="{{ page.session.week0 }}">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2021/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b>{{ page.password.week0 }}</b>
-
-
-</p>
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-
-## Week 1 - Mon Jan 18th
-  
-<p align="center">
-  <a href="{{ page.session.week1 }}">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2021/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b> {{ page.password.week1 }} </b>
-    
-  <br>
-
-</p>
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-## Week 2 - Mon Jan 25th
-  
-<p align="center">
-  <a href="{{ page.session.week2 }}">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2021/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b> {{ page.password.week2 }} </b>
-    
-  <br>
-
-</p>
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-## Week 3 - Mon Feb 1st
-  
-<p align="center">
-  <a href="{{ page.session.week3 }}">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2021/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b> {{ page.password.week3 }} </b>
-    
-  <br>
-
-</p>
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-
-
-## Week 5 - Mon Feb 15th
-  
-<p align="center">
-  <a href="{{ page.session.week5 }}">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2021/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b> {{ page.password.week5 }} </b>
-    
-  <br>
-
-</p>
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-## Week 6 - Mon Feb 22
-  
-<p align="center">
-  <a href="{{ page.session.week6 }}">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2021/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b> {{ page.password.week6 }} </b>
-    
-  <br>
-
-</p>
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-
-
-## Week 7 - Fri Feb 26th
-  
-<p align="center">
-  <a href="{{ page.session.week7 }}">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2021/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b> {{ page.password.week7 }} </b>
-    
-  <br>
-
-</p>
-
-[Study Guide](https://github.com/DS4PS/cpp-524-spr-2021/raw/main/final-exam/cpp-524-final-exam-study-guide.pdf) for the final exam. 
-[Practice Questions](https://github.com/DS4PS/cpp-524-spr-2021/raw/main/final-exam/final-exam-practice-questions.pdf)  
-
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-</div>
 
 <br> 
-<br> 
+<hr>
+<br>
+<br>
+
 
 
 
@@ -232,5 +87,4 @@ Introduction to the Course
   border-radius: 4px;
 }
 </style>
-
 
