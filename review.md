@@ -8,11 +8,9 @@ info:
 
 session: 
 - week0:
-  date: 'THUR May 20'
-  video: ''
-  password: '' 
+  date: 'Welcome'
 - week1:
-  date:  'THUR May 27'  
+  date:  'THUR May 20'  
   video: ''
   password: ''
   sample-code: '' 
