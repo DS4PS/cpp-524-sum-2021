@@ -44,7 +44,7 @@ Live review sessions will be held each week in order to:
 > **{{page.info.day}}**    
 > **{{page.info.time}}** 
 
-<a href='{{page.info.zoom-link' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
+<a href='{{page.info.zoom-link}}' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
 
 <br>
 
