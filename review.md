@@ -11,10 +11,7 @@ session:
   date: 'Welcome'
 - week1:
   date:  'THUR May 20'  
-  video: ''
-  password: ''
-  sample-code: '' 
-  session-code: '' 
+  video: 'https://youtu.be/kiGhFM0yJxk'
 
 root-url: 'https://raw.githubusercontent.com/DS4PS/cpp-524-sum-2021/master/review-sessions/'
 
