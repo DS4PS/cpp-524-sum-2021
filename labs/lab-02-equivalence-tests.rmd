@@ -939,7 +939,7 @@ Remember to:
 
 <br>
 
-## Designing a Fair Decision Criteria
+# Extended Example: Designing a Decision Criteria
 
 This example is meant to demonstrate the process of creating a binding and actionable decision criteria in order to test a hypothesis. 
 
