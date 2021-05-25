@@ -219,7 +219,7 @@ https://www.washingtonpost.com/business/behavioral-economics-show-that-women-ten
 
 https://www.vox.com/2018/10/31/17960156/what-is-the-glass-cliff-women-ceos
 
-*L. Camarena, M. Feeney, & J. Lecy: "Nonprofit Entrepreneurship: The Landscape of Gendered Leadership." Working paper.*
+*Camarena, L., Feeney, M. K., & Lecy, J. (2021). Nonprofit Entrepreneurship: Gender Differences in Strategy and Practice. Nonprofit and Voluntary Sector Quarterly.* [**PDF**](../pubs/camarena-et-al-2021.pdf)
 
 <br>
 
@@ -494,6 +494,8 @@ When factors are independent then knowing additional information about X tells u
 When factors are dependent, then information about X should tell us something about the expected value of Y. The regression line on the right is a much better estimate of heart rate for most cases than the average heart rate of the group (the blue line). 
 
 ![](figures/predicted-y.png)
+
+In other words, saying that **Caffeine and Heart Rate are independent** is equivalent to saying **the slope b1 representing the relationship between caffeine and heart rate is zero**, i.e. not statistically significant (or more precisely that a high p-value does not allow us to reject that null that the slope is zero). 
 
 For any given individual this distance from their actual heart rate to the regression line (red line) should be shorter than the distance from their actual heart rate to the mean (blue line). The improvement of the best guess using the regression line over simply using the sample mean for all individuals is the variance that is "explained" by the model.  
 
