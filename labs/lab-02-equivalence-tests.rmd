@@ -489,7 +489,7 @@ If we have no information about caffeine intake of each participant then our bes
 
 If our model is meaningful (the slope is statistically significant) then our best guess for a person's heart rate is the average of all individuals that consumed the same amount of caffeine, or the predicted value of Y for a level of X (the point on the red regression line). 
 
-When factors are independent then knowing additional information about X tells us nothing about Y. In the case on the left we could do just as well guessing the average heart rate for each case instead of using the regression line. 
+When factors are independent then knowing additional information about X tells us nothing about Y. In the case on the left we could do just as well guessing the heart rate for each individual using the average for the entire group instead of using the regression line. 
 
 When factors are dependent, then information about X should tell us something about the expected value of Y. The regression line on the right is a much better estimate of heart rate for most cases than the average heart rate of the group (the blue line). 
 
@@ -637,124 +637,21 @@ Assuming that the groups are in fact equivalent, if the probability of a Type I 
 
 It's a lot more than 0.05 if we perform 20 independent contrasts and use the same decision criteria for rejecting the null that we use for a single test. 
 
-We can demonstrate the issue with a coin-flip example. Assume a casino has started offering a coin flip game (if the flip is heads the casino wins, tails and the gambler wins). State regulators visit the casino each month to inspect their games to make sure they are fair and the casino is not cheating. 
+We can demonstrate the issue with a coin-flip example. If you were asked, what's the probability that I observe five heads in my coin flip experiment the pertinent question would be, "How many coin flip trials did you conduct?"
 
-They have decided on a test: they flip the same coin FOUR times to inspect outcomes. The probability of getting heads one flip should be 0.5, so the probabily of getting heads all four times is:
+If there were only five flips made then this outcome would be quite rate - it would only occur in 3 percent of the experiments using a fair coin: 
 
-(0.5)(0.5)(0.5)(0.5) = 0.0625
-
-To keep things simple the regulating agency says if this occurs the casino gets fined. Similar to a hypothesis-testing scenario, **casinos that are using fair coins they will unjustly receive a fine 6.25 percent of the time** (a Type I error). 
-
-The regulator and the casino owners have agree that it's an appropriate test because the alternatives to this simple test are expensive and time-consuming (the fair casino is better off paying 1 fine approximately every 20 visits than to pay for more extensive monthly audits). 
-
-One of the regulators proposes they can increase the sample size to improve the accuracy of the tests (sounds reasonable, right?). They will now flip the coin TEN times instead of four. HOWEVER, they do not adjust the decision criteria. 
-
-Now, if at least four or of ten flips are heads, then the casino is still fined. 
-
-Did the larger sample size improve the accuracy of the process? Is this a good decision criteria? 
-
-Obviously not. With ten coins we expect five to be heads (which happens about 1/4 of the time). With that many flips there is an 82 percent chance of getting 4 or more heads, so now the casino is paying a fine 8 visits out of 10 when the coin is fair instead of 1 in 20. 
-
-**Likelihood of each outcome:**
-
-```{r, echo=F}
-n <- 10
-k <- 9
-p <- 0.5
-# choose( n=n, k=k )
-
-x <- NULL
-for( k in 0:10 )
-{
-x[k+1] <- choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
-}
-
-d <- data.frame( heads=(0:10), prob=round(x,3) )
-
-d %>% pander()
+```
+(0.5)(0.5)(0.5)(0.5)(0.5) = 0.03125
 ```
 
+If, however, you had performed 10 coin flips in the experiment then the outcome of 5 heads would occur about 25 percent of the time. 
 
-Instead of increasing the accuracy of the test, the regulatory agency has significantly increase the rate of Type I errors! Casinos with fair coins will not be happy.
+Similarly, if you asked about the likelihood of getting all heads in an experiment, knowing whether it was 2 flips or 20 flips makes a big difference. 
 
-The regulators wanted to increase the sample size so they would not be increase power, but they kept the same decision criteria from the earlier process (if four or more heads are observed the coins are considered unfair). 
+Analogously, the p-value describes the likelihood of observing an outcome when the null hypothesis is true (the NULL being slope=0 in a regression, or no differences in group means in a t-test). It is a reasonable decision criteria if we are doing a single contrast. But once we start doing lots of contrasts together we are increasing the likelihood that we observe at least one small p-value even when the groups are equivalent. 
 
-What they should have done was **select the desired confidence level (0.0625 to be consistent with the original process) and then determine a new decision rule that will fail approximately six percent of the time when the groups are actually equivalent.**
-
-According to the table above, the likelihood of getting 8 or more heads in 10 fair coin flips is 0.055. So that would be an appropriate threshold. 
-
-Analogously, if we want to determine group equivalency but we are conducting 20 contrasts instead of one, then we can't use the same decision criteria as when we are just testing a single contrast (alpha=0.05). Otherwise we will be greatly increasing the Type I error rate since there is a high probability that at least one out of 20 tests have p-values below 0.05 by chance. 
-
-**We need to define a new decision criteria for the omnibus scenario - testing all hypothses together.**
-
-<br>
-<br>
-
-----
-
-**SIDE NOTE** - not required for the lab.
-
-If you are curious, the probability of getting all heads is easy to calculate since it would simply entail ten heads in a row, each with a probability of 0.5:  $$(0.5)^{10} = 0.00097$$ or approximately one in a thousand.
-
-To determine success for 9 out of ten coin flips is a little harder. We need to model the flips as a Bernoulli process: 
-
-$$
-P(k) = {n \choose x} p^k q^{n-k}
-$$
-
-Where **n** is the number of trials, **k** is the number of successes, **p** is the probability of success in each independent trail, and **q** is the probability of failure, which is always 1 - p.
-
-Thus the likelihood of getting 9 heads out of 10 trials is. 
-
-$$
-P(k=9) =  {10 \choose 9} (0.5)^9 (0.5)^{1}
-$$
-
-```{r}
-n <- 10
-k <- 9
-p <- 0.5
-choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
-```
-
-$$
-P(k=8) =  {10 \choose 8} (0.5)^8 (0.5)^{2}
-$$
-
-
-```{r}
-n <- 10
-k <- 8
-p <- 0.5
-choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
-```
-
-Once we reach 8 heads, we are already approach a 5 percent probability mark, so a reasonable decision criteria for the regulators would be observing 8 or more heads in ten flips would result in a fine. 
-
-The total likelihood of these event would be P(k=10) + P(k=9) + P(k=8):
-
-```{r}
-0.00097 + 0.009765625 + 0.04394531
-```
-
-So about 5.5 percent chance of one of these occuring by chance if the coin is in fact fair.
-
-If we look at the next step, we see a big leap in the likelihood of observing 7 heads out of ten flips:
-
-
-$$
-P(k=7) =  {10 \choose 7} (0.5)^7 (0.5)^{3}
-$$
-
-```{r}
-n <- 10
-k <- 7
-p <- 0.5
-choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
-```
-
-So using any criteria less than 8 would result in a higher Type I error rate than desired. 
-
+Scroll to the end for another example of designing a fair decision criteria that accounts for context. 
 
 
 ----
@@ -805,20 +702,18 @@ It's a little annoying when p-values are not reported directly in a table. We ca
 Calculate the p-value for the largest contrast in the table (the one with the highest t-value):
 
 ```{r}
-
 # tvalue = largest tvalue in the table
 # n1 = sample size of treatment group 
 # n2 = samle size of comparison group 
 
 get_pval_from_tval <- function( tvalue, n1, n2 )
 {
-  df <- min( 2964, 2664 ) - 1  # size of treated group and comparison
+  df <- min( n1, n2 ) - 1  # size of treated group and comparison
   pval <- 2 * pt( abs(tvalue), df=df, lower.tail=FALSE )
   return( pval )
 }
 
 get_pval_from_tval( tvalue=2.16, n1=2964, n2=2664 )
-
 ```
 
 **Since 0.03 > 0.0045 then we do NOT reject the null ::: THE GROUPS ARE CONSIDERED EQUIVALENT**
@@ -915,7 +810,7 @@ chisq.test( t, simulate.p.value=TRUE, B=10000 )
 
 -----
 
-**ANSWER:** No, we do not observe past founding differences between male and female entrepreneurs. Male founders reported slightly more past experience (53 percent versus 47 percent of female founders), but the contrast was not significant at the alpha=0.05 level (chi-squre p-value 0.2277). 
+**ANSWER:** No, we do not observe past founding differences between male and female entrepreneurs. Female founders reported slightly more past experience (53 percent versus 47 percent of female founders), but the contrast was not significant at the alpha=0.05 level (chi-squre p-value 0.2277). 
 
 ------
 
@@ -1043,6 +938,143 @@ Remember to:
 -----
 
 <br>
+
+## Designing a Fair Decision Criteria
+
+This example is meant to demonstrate the process of creating a binding and actionable decision criteria in order to test a hypothesis. 
+
+We often use **alpha=0.05** in evaluation studies but it is not clear why. It turns out that alpha=0.05 is a cutoff that tends to do a good job of balancing Type I and Type II Errors under general conditions. When you make a test more sensitive so that you are more likely to detect a phenomenon like a COVID infection it also increases the likelihood of false positives. Making the criteria more stringent to eliminate this noise will alternatively increase the likelihood of missing real cases. So a good decision criteria must account for the cost of each type of error. 
+
+----- 
+
+Let's us an example where we need to design a regulatory framework for casinos. 
+
+Assume a casino has started offering a coin flip game: if the flip comes up heads the casino wins, tails and the gambler wins. State regulators visit the casino each month to inspect their games to make sure they are fair and the casino is not cheating. 
+
+They have decided on a test: they flip the same coin FOUR times to inspect outcomes. The probability of getting heads one flip should be 0.5, so the probability of getting heads all four times is:
+
+(0.5)(0.5)(0.5)(0.5) = 0.0625
+
+To keep things simple the regulating agency says if this occurs the casino gets fined. Similar to a hypothesis-testing scenario, **casinos that are using fair coins they will unjustly receive a fine 6.25 percent of the time** (a Type I error). 
+
+The regulator and the casino owners have agree that it's an appropriate test because the alternatives to this simple test are expensive and time-consuming (the fair casino is better off paying 1 fine approximately every 20 visits than to pay for more extensive monthly audits). 
+
+One of the regulators proposes they can increase the sample size to improve the accuracy of the tests (sounds reasonable, right?). They will now flip the coin TEN times instead of four. HOWEVER, they do not adjust the decision criteria. 
+
+Now, if at least four of ten flips are heads, then the casino is still fined. 
+
+Did the larger sample size improve the accuracy of the process? Is this a good decision criteria? 
+
+Obviously not. With ten coins we expect five to be heads (which happens about 1/4 of the time). With that many flips there is an 82 percent chance of getting 4 or more heads, so now the casino is paying a fine 8 visits out of 10 when the coin is fair instead of 1 in 20. 
+
+**Likelihood of each outcome:**
+
+```{r, echo=T}
+n <- 10
+k <- 9
+p <- 0.5
+# choose( n=n, k=k )
+
+x <- NULL
+for( k in 0:10 )
+{
+x[k+1] <- choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
+}
+
+d <- data.frame( heads=(0:10), prob=round(x,3) )
+
+d %>% pander()
+```
+
+
+Instead of increasing the accuracy of the test, the regulatory agency has significantly increase the rate of Type I errors! Casinos with fair coins will not be happy.
+
+The regulators wanted to increase the sample size so they would not be increase power, but they kept the same decision criteria from the earlier process (if four or more heads are observed the coins are considered unfair). 
+
+What they should have done was **select the desired confidence level (0.0625 to be consistent with the original process) and then determine a new decision rule that will fail approximately six percent of the time when the groups are actually equivalent.**
+
+According to the table above, the likelihood of getting 8 or more heads in 10 fair coin flips is 0.055. So that would be an appropriate threshold. 
+
+Analogously, if we want to determine group equivalency but we are conducting 20 contrasts instead of one, then we can't use the same decision criteria as when we are just testing a single contrast (alpha=0.05). Otherwise we will be greatly increasing the Type I error rate since there is a high probability that at least one out of 20 tests have p-values below 0.05 by chance. 
+
+**We need to define a new decision criteria for the omnibus scenario - testing all hypotheses together.**
+
+<br>
+<br>
+
+----
+
+**SIDE NOTE** - not required for the lab.
+
+If you are curious, the probability of getting all heads is easy to calculate since it would simply entail ten heads in a row, each with a probability of 0.5:  $$(0.5)^{10} = 0.00097$$ or approximately one in a thousand.
+
+To determine success for 9 out of ten coin flips is a little harder. We need to model the flips as a Bernoulli process: 
+
+$$
+P(k) = {n \choose x} p^k q^{n-k}
+$$
+
+Where **n** is the number of trials, **k** is the number of successes, **p** is the probability of success in each independent trail, and **q** is the probability of failure, which is always 1 - p.
+
+Thus the likelihood of getting 9 heads out of 10 trials is. 
+
+$$
+P(k=9) =  {10 \choose 9} (0.5)^9 (0.5)^{1}
+$$
+
+```{r}
+n <- 10
+k <- 9
+p <- 0.5
+choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
+```
+
+$$
+P(k=8) =  {10 \choose 8} (0.5)^8 (0.5)^{2}
+$$
+
+
+```{r}
+n <- 10
+k <- 8
+p <- 0.5
+choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
+```
+
+Once we reach 8 heads, we are already approach a 5 percent probability mark, so a reasonable decision criteria for the regulators would be observing 8 or more heads in ten flips would result in a fine. 
+
+The total likelihood of these event would be P(k=10) + P(k=9) + P(k=8):
+
+```{r}
+0.00097 + 0.009765625 + 0.04394531
+```
+
+So about 5.5 percent chance of one of these occuring by chance if the coin is in fact fair.
+
+If we look at the next step, we see a big leap in the likelihood of observing 7 heads out of ten flips:
+
+
+$$
+P(k=7) =  {10 \choose 7} (0.5)^7 (0.5)^{3}
+$$
+
+```{r}
+n <- 10
+k <- 7
+p <- 0.5
+choose( n=n, k=k ) * ( p ^ k  ) * ( (1-p) ^ (n-k) )
+```
+
+So using any criteria less than 8 would result in a higher Type I error rate than desired. 
+
+
+<br>
+
+----
+
+<br>
+
+
 
 
 
