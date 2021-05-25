@@ -1004,7 +1004,7 @@ Analogously, if we want to determine group equivalency but we are conducting 20 
 
 ----
 
-**SIDE NOTE** - not required for the lab.
+**SIDE NOTE** 
 
 If you are curious, the probability of getting all heads is easy to calculate since it would simply entail ten heads in a row, each with a probability of 0.5:  $$(0.5)^{10} = 0.00097$$ or approximately one in a thousand.
 
