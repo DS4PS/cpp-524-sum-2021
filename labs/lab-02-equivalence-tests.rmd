@@ -810,7 +810,7 @@ chisq.test( t, simulate.p.value=TRUE, B=10000 )
 
 -----
 
-**ANSWER:** No, we do not observe past founding differences between male and female entrepreneurs. Female founders reported slightly more past experience (53 percent versus 47 percent of female founders), but the contrast was not significant at the alpha=0.05 level (chi-squre p-value 0.2277). 
+**ANSWER:** No, we do not observe past founding differences between male and female entrepreneurs. Female founders reported slightly more past experience (53 percent versus 47 percent of male founders), but the contrast was not significant at the alpha=0.05 level (chi-squre p-value 0.2277). 
 
 ------
 
