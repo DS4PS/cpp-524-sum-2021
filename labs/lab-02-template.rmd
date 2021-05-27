@@ -40,17 +40,6 @@ head( dat )
 
 
 
-# Questions
-
-## Q1
-
-```{r}
-# code here
-```
-
-Explanation here with your **answer highlighted**. 
-
-
 
 # QUESTIONS
 
