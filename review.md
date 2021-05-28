@@ -13,6 +13,12 @@ session:
   date:  'THUR May 20'  
   video: 'https://youtu.be/kiGhFM0yJxk'
 
+- week2: 
+  date:  'THUR May 27'  
+  video: 'https://youtu.be/vJzqj0IyDms'
+  code: 'https://www.dropbox.com/s/57zi2vktk7k1d0u/Review%2002.Rmd?dl=0'
+  links: 'https://www.dropbox.com/s/57zi2vktk7k1d0u/Review%2002.Rmd?dl=0'
+
 root-url: 'https://raw.githubusercontent.com/DS4PS/cpp-524-sum-2021/master/review-sessions/'
 
 ---
