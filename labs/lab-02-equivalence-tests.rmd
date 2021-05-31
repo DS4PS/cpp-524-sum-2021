@@ -478,7 +478,14 @@ When variables are categorical we will instead use a chi-square test. It is a co
 
 What do we mean by a test for the independence of two variables? 
 
+
+**Independence of Continuous Variables**
+
+If we are 
+
 Recall the meaning of statistical significance in the regression context. If the slope coefficient is significant then knowing information about the treatment (milligrams of caffeine consumed) should give you information about the outcome (heart rate). 
+
+If we know that an individual has received 425 mg of caffeine would 90 (the sample average) or 107 be a better guess of their actual heart rate? 
 
 ![](figures/yhat-and-significance.png)
 
@@ -503,7 +510,45 @@ For any given individual this distance from their actual heart rate to the regre
 
 **Independence of categorical variables**
 
-So let's apply this same predictive reasoning to understand the meaning of a test for independence. 
+So let's apply this same predictive reasoning to understand the meaning of a test for independence for categorical variables.
+
+We have a sample of 100 individuals with either black or blonde hair. We record the eye color of each individual. Are hair color and eye color independent?
+
+TO answer this we start by creating a contingency table of the two factors: 
+
+![](figures/contingency-table.png)
+
+We then want to use a chi-square technique to test for independence. 
+
+The most meaningful null hypothesis in a regression model is that the slope b1=0, that X and Y are related or independent. If the p-value for b1 in the model is less than 0.05 we conclude that X and Y are related or that they are NOT independent. So the slope=0 is the default null in regression models. 
+
+Note that factor levels will not always be proportionate in the population - more people tend to have dark hair in the world than blonde hair. 
+
+The first step of the chi-square test, then, is figuring out what proportion of individuals we would expect to observe in each cell if the factors are independent. 
+
+In this case we know that 60 percent of the sample will have black hair, which represents 60 individuals in this case since we have 100 individuals in the study. 
+
+Out of the 60 individuals, how many do we expect to have brown eyes? Well, if the factors are independent (if eye color does not depend on hair color) then we know 70 percent of the population has brown eyes, so we would guess than 70 percent of the 60 individuals would also have brown eyes.
+
+70 percent of 60 individuals is 42 individuals. 
+
+Similarly, the proportion of cases that we expect to observe in each cell will be the product of the row proportion and the column proportion. 
+
+
+![](figures/chi-square-null.png)
+
+After we have created our table of expected values under the null, we can compare the observed values to the expected values to see how closely our data conforms to a world in which the two factors are independent. 
+
+![](figures/chi-square-residuals.png)
+Similar to the regression model, our residuals are the amount our observed values deviate from the expected values. The proportions are reported on the tables here to keep it simple. The chi-square values utilize counts, not proportions. And similar to regression residuals we square the deviations before summing otherwise they would all cancel each other out since half will be positive deviations and half negative.
+
+The thing that makes a chi-square test different from other tests is that it does not produce a standard error, so we can't build a simple confidence interval to determine statistical significance. Instead we would need to construct all possible tables that have a sample size of 100 and the same row and column proportions, calculate the chi-square value for each table, then see how often the a chi-square value is as large as our observed value. 
+
+When tables are small this is a pretty straight-forward calculation. But when we have large sample and factors have many levels the number of possible tables can grow exponentially leading to a scenario where it can take hours or years to examine all tables that meet those criteria. As a result p-values are often calculated using an approximation heuristic. You might notice that if you run the same test several times the p-value will be slightly different each time. 
+
+
+
+**Real World Example**
 
 This example uses data about hair color and eye color from 592 individuals to test the independence of these two traits. 
 
