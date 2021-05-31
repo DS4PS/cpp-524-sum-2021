@@ -807,6 +807,7 @@ After creating the contrasts, report your findings about study group equivalence
 
 
 
+
 ## Sample Code
 
 **TABLES:**
@@ -835,6 +836,15 @@ chisq.test( t, simulate.p.value=TRUE, B=10000 )
 ```{r, eval=F}
 t.test( age ~ gender, data=dat )
 ```
+
+
+
+**RMD Template:**
+
+To download the template click on the link here then right-click on the template and save as lab-02-LASTNAME.rmd. 
+
+[ ![](figures/download.png) ](https://raw.githubusercontent.com/DS4PS/cpp-524-sum-2021/main/labs/lab-02-template.rmd)
+
 
 
 ## Example Response 
