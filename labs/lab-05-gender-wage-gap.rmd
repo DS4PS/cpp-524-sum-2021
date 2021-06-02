@@ -171,6 +171,8 @@ NTMAJ12[ d$NTEE1 == "Y" ] <- "prof associations"
 NTMAJ12[ d$NTEE1 == "Z" ] <- NA
 
 d$NTMAJ12 <- NTMAJ12
+
+
 ```
 
 
@@ -188,6 +190,7 @@ The variable **gender** is a binary representation of the sex of the CEO as eith
 ### Packages
 
 ```{r}
+# install.packages("...")
 library( dplyr )
 library( pander )
 library( memisc )
