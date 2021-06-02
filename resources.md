@@ -82,6 +82,19 @@ The following provide useful tutorials that offer R syntax for common regression
   - Chapter 12 – Linear Regression and Correlation
 
  
+ 
+ ## Join the MS-PEDA Community
+
+Join the MS-PEDA groups on Linked-In or Facebook to meet alumni and stay connected to the program. 
+
+[LINKED-IN GROUP](https://www.linkedin.com/groups/13977637/)
+
+[FACEBOOK GROUP](https://www.facebook.com/groups/507960480629680)
+
+
+<br>
+<hr>
+<br>
 
 
 </div>
