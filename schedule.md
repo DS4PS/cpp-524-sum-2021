@@ -418,21 +418,17 @@ Report your findings on YellowDig with a link to the news story.
 <a class="uk-button uk-button-primary" href="{{page.yellowdig}}">YELLOWDIG</a>
 
 
-As an example, here is an excerpt from the story, **[Weed may not ease sleep problems, especially for regular users, studies say](https://www.cnn.com/2020/01/20/health/weed-sleep-debunk-wellness/index.html)**. 
+As an example, here is an excerpt from the story, **[Meat-free diet may lower severe disease risk](https://news.yahoo.com/meat-free-diet-may-lower-193203844.html)**. 
 
-> To test that concept, Sznitman and her team analyzed the sleep patterns of 128 people aged 50 and older with chronic pain. Sixty-two of the subjects didn't use weed; the other 66 were marijuana users who used whole-plant based cannabis to ease their pain and help with sleep.
+> People on meat-free diets had lower odds of contracting moderate to severe COVID-19, according to a six-country study published on Monday in BMJ Nutrition, Prevention & Health. Plant-based diets were tied to a 73% lower risk of severe disease, researchers found in a survey of 2,884 healthcare providers who cared for COVID-19 patients. Combining those on a plant-based diet and people who also ate fish but no meat, researchers found 59% lower odds of severe disease. 
 > 
-> The study, published Monday in the journal BMJ Supportive & Palliative Care, found those who were using cannabis were less likely to report middle-of-the-night awakenings as compared to those who were not. No differences were found between the groups when it came to difficulties initiating sleep and waking too early.
+> But plant-based diets are rich in nutrients, vitamins and minerals that are important for healthy immune systems, the researchers noted, and fish provide vitamin D and omega-3 fatty acids, which have anti-inflammatory properties. 
 
 Is this an apples to apples comparison?
 
-Do we believe that people who voluntarily smoke marijuana (there was no assignment to groups, it is observational) are identical to those that do not in most ways except that one behavior???
-
-We know they are not because the article states: 
-
-> However, the survey found that when depression and anxiety levels were factored in, the differences disappeared. 
-
-What has to be true for a control variable to make an effect disappear? 
+Do we believe that vegetarians are identical to those that eat meat in all ways except that one behavior (there was no assignment to groups, it is observational)?
+ 
+Is this a causal story? Or is the mechanism something besides diet? 
 
 <br>
 <br>
