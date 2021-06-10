@@ -449,39 +449,24 @@ Randomization produces statistically equivalent treatment and control groups, no
 
 The contrast, then, is a **comparison of group means with a test for significance**. 
 
-Contrasts are typically reported in a table by listing the two means, reporting their differences, and either reporting p-values associated with the differences or including starts that signal significant differences. *In some cases the t-statistic is reported instead of the p-value, but the rule of thumb is that a t-stat over 2 implies statistical significance at the alpha=0.05 level (a 95% confidence interval).* 
+Contrasts are typically reported in a table by listing the two means, reporting their differences, and either reporting p-values associated with the differences or including starts that signal significant differences. 
 
-![](figures/group-equivalence-table.png)
+In some cases the t-statistic is reported instead of the p-value, but the rule of thumb is that a **t-stat greater than 2** implies statistical significance at the alpha=0.05 level (a 95% confidence interval). *There are caveats to the rule of thumb (it assumes a large sample size, for example), but we use the default 1.96 value in confidence intervals because it is the t-value associated with a 95% confidence interval, so any t-value greater than that suggests the p-value is less than 0.05.*
 
-If groups are equivalent we should expect that tests show no meaningful differences across a set of measures that describe the study population. They are typically presented in tabular form like this table below describing villages that participated in an economic development program and the villages they have been matched to for comparison. If the matching worked then we should have a group that is identical to the treatment group – no significant differences exist. 
 
-Randomization *almost always* produces statistically identical treatment and control groups, but there are other quasi-experimental techniques that are used to generate **balanced groups**, meaning groups that have no observed differences in the traits that are measured and reported in the data.
+Randomization *almost always* produces statistically equivalent treatment and control groups. We can also use other quasi-experimental techniques to generate **balanced groups**, meaning groups that have no observed differences in the traits that are measured and reported in the data. Randomization is preferable because it ensures balance across all **measured and unmeasured traits**, not just the ones we have data on. 
 
-It is important to note that these approaches can generate subsamples that are balanced on observed characteristics, but randomization ensures that groups are balanced on both observed and unobserved characteristics. 
-
-The problem with omitted variables is we don't always know what they even are, so it's hard to ensure you have included ALL variables that might matter in a regression. Since randomization produces balance in unobserved traits it fixes omitted variable bias problems that you were not even aware you had! Which is why RCTs are "the gold standard" in causal inference and astute policy-makers will look for convergence in results across several quasi-experimental studies before trusting the inferences. 
+The problem with omitted variables is we don't always know what they even are, so it's hard to ensure you have ALL variables that might matter in a regression. Since randomization produces balance in unobserved traits it fixes omitted variable bias problems that you were not even aware you had! Which is why RCTs are "the gold standard" in causal inference and astute policy-makers will look for convergence in results across several quasi-experimental studies before trusting the inferences. 
 
 <br>
 
 
 
-## Contrasts with Categorical Variables 
+## Tests for Independence of Variables 
 
 
-When examining group composition it is common to include traits like race and gender that are categorical and not numerical measures. 
+**Two Continuous Variables**
 
-T-tests are used to conduct a contrasts when measures are continuous, but they do not work when the variable is categorical (how would you calculate the average of four categories of race?).
-
-When variables are categorical we will instead use a chi-square test. It is a common **test for independence of factor levels** in statistics. 
-
-**Tests for independence**
-
-What do we mean by a test for the independence of two variables? 
-
-
-**Independence of Continuous Variables**
-
-If we are 
 
 Recall the meaning of statistical significance in the regression context. If the slope coefficient is significant then knowing information about the treatment (milligrams of caffeine consumed) should give you information about the outcome (heart rate). 
 
@@ -490,27 +475,40 @@ If we know that an individual has received 425 mg of caffeine would 90 (the samp
 ![](figures/yhat-and-significance.png)
 
 
-Heart rate depends on caffeine intake if the two variables are related. 
+Heart rate depends on caffeine intake if the two variables are related in some way. 
 
 If we have no information about caffeine intake of each participant then our best guess for a person's heart rate is the average heart rate of all people in the sample (the blue line, y-bar). 
 
 If our model is meaningful (the slope is statistically significant) then our best guess for a person's heart rate is the average of all individuals that consumed the same amount of caffeine, or the predicted value of Y for a level of X (the point on the red regression line). 
 
-When factors are independent then knowing additional information about X tells us nothing about Y. In the case on the left we could do just as well guessing the heart rate for each individual using the average for the entire group instead of using the regression line. 
+If heart rate does NOT depend on caffeine the variables are **independent**.  
 
-When factors are dependent, then information about X should tell us something about the expected value of Y. The regression line on the right is a much better estimate of heart rate for most cases than the average heart rate of the group (the blue line). 
+When two variables are independent then knowing additional information about X tells us nothing about Y. In the case on the left we could do just as well guessing the heart rate for each individual using the average for the entire group instead of using the regression line. 
+
+When variables are correlated, then information about X should tell us something about the expected value of Y. The regression line on the right is a much better estimate of heart rate for most cases than the average heart rate of the group (the blue line). 
 
 ![](figures/predicted-y.png)
 
 In other words, saying that **Caffeine and Heart Rate are independent** is equivalent to saying **the slope b1 representing the relationship between caffeine and heart rate is zero**, i.e. not statistically significant (or more precisely that a high p-value does not allow us to reject that null that the slope is zero). 
 
-For any given individual this distance from their actual heart rate to the regression line (red line) should be shorter than the distance from their actual heart rate to the mean (blue line). The improvement of the best guess using the regression line over simply using the sample mean for all individuals is the variance that is "explained" by the model.  
 
 ![](figures/explained-variance.png)
 
+The **variance explained** measure R-square gives some sense of how much the prediction would improve based upon the model. 
+
+For the prediction to improve the distance from someone's actual heart rate to the regression line (red line) should be shorter than the distance from their actual heart rate to the mean (blue line). 
+
+The improvement of the best guess using the regression line over the best guess using the sample mean is the variance that is "explained" by the model.  
+
 **Independence of categorical variables**
 
-So let's apply this same predictive reasoning to understand the meaning of a test for independence for categorical variables.
+It is common for studies to examine traits like race and gender that are categorical, not continuous, measures. 
+
+T-tests are used to conduct a contrasts when measures are continuous, but they do not work when the variable is categorical (how would you calculate the average of four categories of race?).
+
+When variables are categorical we will instead use a **chi-square test**. It is a common **test for independence of factor levels** in statistics. 
+
+Let's apply the same predictive reasoning as above to understand the meaning of a test for independence of two categorical variables.
 
 We have a sample of 100 individuals with either black or blonde hair. We record the eye color of each individual. Are hair color and eye color independent?
 
@@ -518,7 +516,6 @@ TO answer this we start by creating a contingency table of the two factors:
 
 ![](figures/contingency-table.png)
 
-We then want to use a chi-square technique to test for independence. 
 
 The most meaningful null hypothesis in a regression model is that the slope b1=0, that X and Y are related or independent. If the p-value for b1 in the model is less than 0.05 we conclude that X and Y are related or that they are NOT independent. So the slope=0 is the default null in regression models. 
 
@@ -674,7 +671,12 @@ But how do we know collectively if the groups are equivalent when we have lots o
 
 ![](figures/group-equivalence-table.png)
 
-Since we cannot use a t-test or chi-square to compare a bunch of variables at once, we must apply the criteria that none of the contrasts are statistically significant to establish group equivalence. 
+
+> The table reports characteristics of villages that participated in an economic development program and the villages they have been matched to for comparison.
+> 
+> If two groups are equivalent we should expect that tests show no meaningful differences across the measured traits. If the matching worked (the study groups are well-balanced) then no significant differences should exist. 
+
+Since we cannot use a t-test or chi-square to **compare a bunch of variables at once**, we must apply the criteria that none of the contrasts are statistically significant to establish group equivalence. 
 
 There is a problem here, though!
 

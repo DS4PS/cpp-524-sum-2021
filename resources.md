@@ -7,6 +7,24 @@ title: Resources
   
 <br><br>
 
+<br>
+<br>
+<hr>
+<br>
+
+**Join the MS-PEDA Community**
+
+Join the MS-PEDA groups on Linked-In or Facebook to meet alumni and stay connected to the program. 
+
+<a class="uk-button uk-button-primary" onclick="window.open('https://www.linkedin.com/groups/13977637/')"> LinkedIn Group </a>
+
+<a class="uk-button uk-button-primary" onclick="window.open('https://www.facebook.com/groups/507960480629680')"> Facebook Group </a>
+
+<br>
+<hr>
+<br>
+
+
 ## The Field of Program Eval
 
 [Overview](../prog-eval/)
@@ -82,6 +100,11 @@ The following provide useful tutorials that offer R syntax for common regression
   - Chapter 12 – Linear Regression and Correlation
 
  
+ 
+
+<br>
+<hr>
+<br>
 
 
 </div>
