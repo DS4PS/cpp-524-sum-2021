@@ -849,10 +849,10 @@ This final lab offers an opportunity to synthesize material on counterfactuals b
 
 You are presented with analysis that estimates the gender pay gap of nonprofit executive directors using three different models. The key insight is being able to determine which of the three estimators you are using in each regression model (reflexive, post-test only, or pre-post with comparison), what each estimator represents, and which estimate is most appropriate for your research question. 
 
-**Instructions** 
- 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-524-sum-2020/labs/lab-05-gender-wage-gap.html">Lab-05 Instructions</a>
 
+  
+**Instructions** 
  
 You will see that the pay gap will change when you change the estimator. Explain in your own words what you believe each represents (see the diagram on components of the pay gap for ideas), then select the one that you believe is the best measure for the pay discrimination component of the gender pay gap (unequal pay for equal work). 
 
