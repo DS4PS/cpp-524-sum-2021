@@ -868,9 +868,7 @@ d <- read.csv( URL )
 
 <br>
 <hr>
-<br>
 
-  
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
 
 <hr>
