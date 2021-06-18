@@ -847,19 +847,33 @@ At this point you should have feedback on your research design memo and practice
 
 This final lab offers an opportunity to synthesize material on counterfactuals by calculating program impact in a couple of different ways with the same data set and thinking about which estimator (counterfactual) best suits the research question. 
 
-You are asked to estimate the gender pay gap of nonprofit executive directors using two different models. The key insight is being able to determine which of the three estimators you are using in each regression model (reflexive, post-test only, or pre-post with comparison). 
+You are presented with analysis that estimates the gender pay gap of nonprofit executive directors using three different models. The key insight is being able to determine which of the three estimators you are using in each regression model (reflexive, post-test only, or pre-post with comparison), what each estimator represents, and which estimate is most appropriate for your research question. 
 
-You will see that the pay gap will change when you change the estimator. The goal is to try and determine which estimate is the best and most unbiased measure for the gender pay gap. 
-
-**Incorporating Research Design Principles into Models**  
-
+**Instructions** 
+ 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-524-sum-2020/labs/lab-05-gender-wage-gap.html">Lab-05 Instructions</a>
 
-<!---
-<br>
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
--->
+ 
+You will see that the pay gap will change when you change the estimator. Explain in your own words what you believe each represents (see the diagram on components of the pay gap for ideas), then select the one that you believe is the best measure for the pay discrimination component of the gender pay gap (unequal pay for equal work). 
 
+Write up your argument and submit via Canvas.
+
+You do not need to run models to answer the questions above, but if you would like to follow along you can load the data and auxiliary functions as follows: 
+  
+```r
+source( "https://raw.githubusercontent.com/DS4PS/cpp-524-sum-2021/main/labs/diff_n_diff_graph4.R" )
+URL <- "https://github.com/DS4PS/cpp-524-sum-2021/blob/main/labs/data/np-ceo-comp-data.csv?raw=true"
+d <- read.csv( URL )
+```
+
+<br>
+<hr>
+<br>
+
+  
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
+
+<hr>
 <br>
 <br>
 
