@@ -12,7 +12,6 @@ session:
 - week1:
   date:  'THUR May 20'  
   video: 'https://youtu.be/kiGhFM0yJxk'
-
 - week2: 
   date:  'THUR May 27'  
   video: 'https://youtu.be/vJzqj0IyDms'
