@@ -19,6 +19,19 @@ knitr::opts_chunk$set( echo=T, message=F, warning=F, image.width=10)
 
 
 
+# Overview
+
+This lab is loosely based on results from:
+
+> Bingham, R., & Felbinger, C. (2002). *Evaluation in practice: A methodological approach.* CQ Press.
+
+[CH-05: Improving Cognitive Ability in Chronically Deprived Children](https://ds4ps.org/cpp-524-sum-2021/pubs/eval-in-practice-CH5-randomized-control-trial.pdf)
+
+The treatment is nutrition support and specialized tutoring for low-SES students in a poor neighborhood in Peru. The outcome is a standardized measure of academic ability. 
+
+Instead of four distinct treatment groups and five time periods this lab will use one treatment group, one control group, and one comparison group (the high socio-economic status students). 
+
+The treatment group starts treatment in the first time period and continues to receive it in periods 2 and 3 in the study. Neither the control group nor the comparison group receive the treatment at any point. 
 
 ![](figures/diff-in-diff-lab.png)
 
@@ -28,6 +41,7 @@ knitr::opts_chunk$set( echo=T, message=F, warning=F, image.width=10)
 
 ```{r, fig.height=8, fig.width=8, eval=F, echo=F}
 
+# CODE TO GENERATE A SYNTHETIC DATASET
 
 # -----------------------------------------------
 #     &nbsp;       time0   time1   time2   time3 
@@ -153,7 +167,16 @@ library( scales )
 library( stargazer )
 library( pander )
 
-# stargazer output type
+# STARGAZER OUTPUT
+#
+# Use:
+#
+#   s.type="text"
+#
+# while running chunks interactively
+# to see table output.
+# This sets it to "html"
+# when knitting the file.
 s.type="html"
 ```
 
@@ -163,21 +186,31 @@ s.type="text"
 ```
 
 
-```{r, eval=F}
+```{r}
 URL <- "https://github.com/DS4PS/cpp-524-sum-2021/blob/main/labs/data/counterfactuals.csv?raw=true"
 d <- read.csv( URL )
 
+# set factor levels
+d$group <- factor( d$group, 
+                   levels=c("high.ses","treatment","control"))
+```
+
+
+Sample sizes for each group in the panel:
+
+```{r}
+table( d$group,d$time ) %>% pander()
+```
+
+Group means in each time period: 
+
+```{r}
 tapply( d$ability, list(d$group,d$time), mean ) %>% 
   round(2) %>% 
   pander()
 ```
 
-```{r, echo=F}
-d <- readRDS( "data/counterfactuals.rds" )
-tapply( d$ability, list(d$group,d$time), mean ) %>% 
-  round(2) %>% 
-  pander()
-```
+
 
 
 ```{r, fig.height=8, fig.width=8, echo=F}
