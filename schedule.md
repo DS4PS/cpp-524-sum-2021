@@ -426,9 +426,11 @@ As an example, here is an excerpt from the story, **[Meat-free diet may lower se
 
 Is this an apples to apples comparison?
 
-Do we believe that vegetarians are identical to those that eat meat in all ways except that one behavior (there was no assignment to groups, it is observational)?
+Do we believe that vegetarians are identical to those that eat meat in all ways except that one behavior? Note that there was no assignment to groups by the researchers, it is an observational study. Public health experiments are challenging because it would be hard to assign diet preferences to study participants over a long period and unlikely changes over a short period could have a significant impact on health. 
  
-Is this a causal story? Or is the mechanism something besides diet? 
+Is this a causal story? Or is the mechanism something besides diet? If so, what do you think it could be? 
+  
+*Review question - what needs to be true for an alternative explanation to cause omitted variable bias if not added as a control in a study? Speficially, what is the correlation structure with the outcome and the policy variable?* 
 
 <br>
 <br>
